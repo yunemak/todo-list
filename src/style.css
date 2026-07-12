@@ -50,3 +50,9 @@ html {
 	border-radius: 10px;
 	background-color: aliceblue;
 }
+
+/* Task List */
+
+.task {
+	background-color: red;
+}
