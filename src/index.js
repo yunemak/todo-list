@@ -1,7 +1,11 @@
 import "./style.css";
 
 const taskList = document.querySelector(".task-list");
+const addTaskBtn = document.querySelector("#add-task-btn");
 
+addTaskBtn.addEventListener("click", () => {
+	openTaskManager();
+});
 
 let task1 = createTask("den", "a", "23", "low");
 renderTask(task1);
@@ -9,6 +13,13 @@ renderTask(task1);
 
 
 // functions
+
+function openTaskManager() {
+	let div = document.createElement("div");
+	div.classList.add("task-manager");
+	div.textContent = "deneme";
+	taskList.appendChild(div);
+}
 
 function createTask(title, description, dueDate, priority) {
 	return {
