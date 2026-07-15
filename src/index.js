@@ -20,7 +20,6 @@ closeTaskManagerBtn.addEventListener("click", () => {
 	addTaskBtn.style.cursor = "pointer";
 });
 
-
 let task1 = createTask("den", "a", "23", "low");
 addTask(task1);
 
