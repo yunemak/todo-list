@@ -19,4 +19,4 @@ function addTask(task) {
 }
 
 
-export {mainContainer, taskList, addTaskBtn, createTask, addTask };
+export {mainContainer, addTaskBtn, createTask, addTask };
