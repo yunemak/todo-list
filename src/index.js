@@ -5,9 +5,21 @@ const mainContainer = document.querySelector(".main-container");
 const taskList = document.querySelector(".task-list");
 const addTaskBtn = document.querySelector("#add-task-btn");
 
+const taskManager = document.querySelector(".task-manager");
+const closeTaskManagerBtn = document.querySelector(".close-btn");
+
+
 addTaskBtn.addEventListener("click", () => {
 	openTaskManager();
+	addTaskBtn.style.cursor = "default";
 });
+
+closeTaskManagerBtn.addEventListener("click", () => {
+	taskManager.style.display = "none";
+	mainContainer.style.filter = "none";
+	addTaskBtn.style.cursor = "pointer";
+});
+
 
 let task1 = createTask("den", "a", "23", "low");
 addTask(task1);
@@ -18,7 +30,7 @@ addTask(task1);
 
 function openTaskManager() {
 	mainContainer.style.filter =  "blur(10px)";
-	
+	taskManager.style.display = "flex";
 }
 
 function createTask(title, description, dueDate, priority) {
@@ -27,8 +39,8 @@ function createTask(title, description, dueDate, priority) {
 		description,
 		dueDate,
 		priority,
-	}
-};
+	};
+}
 
 function addTask(task) {
 	let div = document.createElement("div");

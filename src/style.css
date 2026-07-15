@@ -49,6 +49,7 @@ html {
 	border: 2px solid gray;
 	border-radius: 10px;
 	background-color: aliceblue;
+	cursor: pointer;
 }
 
 /* Task List */
@@ -80,7 +81,7 @@ button[type="checkbox"] {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	/* Layout inside */
-	display: flex;
+	display: none;
 	align-items: center;
 	flex-direction: column;
 	gap: 10px;
