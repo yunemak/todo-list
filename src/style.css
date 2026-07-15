@@ -125,3 +125,9 @@ button[type="checkbox"] {
 	height: 15px;
 
 }
+
+.confirm-btn {
+	background-color: lightgreen;
+	border: 1px solid black;
+	color: black;
+}
