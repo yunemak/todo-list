@@ -7,6 +7,7 @@ const titleInput = document.querySelector("#title");
 
 closeTaskManagerBtn.addEventListener("click", () => {
 	closeTaskManager();
+	closeTaskManager();
 });
 
 confirmBtn.addEventListener("click", () => {
