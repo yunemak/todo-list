@@ -67,7 +67,10 @@ button[type="checkbox"] {
 	height: 20px;
 }
 
+/* Task Manager */
+
 .task-manager {
+	padding: 10px;
 	background-color: antiquewhite;
 	border: 3px solid black;
 	width: 600px;
@@ -76,4 +79,24 @@ button[type="checkbox"] {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	/* Layout inside */
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.task-manager > form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.entry {
+	max-width: 95%;
+
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	column-gap: 10px;
+	justify-content: flex-start;
 }

@@ -18,10 +18,22 @@ addTask(task1);
 
 function openTaskManager() {
 	mainContainer.style.filter =  "blur(10px)";
+	body.appendChild(createTaskManager());
+}
+
+function createTaskManager() {
 	let div = document.createElement("div");
 	div.classList.add("task-manager");
-	div.textContent = "deneme";
-	body.appendChild(div);
+
+	div.appendChild(createTitle("Task Manager"));
+	
+	let form = document.createElement("form");
+	form.appendChild(createInput("Title:", "text"));
+	form.appendChild(createInput("Description:", "textarea"));
+
+	div.appendChild(form);
+
+	return div;
 }
 
 function createTask(title, description, dueDate, priority) {
@@ -66,4 +78,21 @@ function createCheckbox() {
 
 	check.type = "checkbox";
 	return check;
+}
+
+function createInput(label, type) {
+	let div = document.createElement("div");
+	div.classList.add("entry");
+	let labelEl = document.createElement("label");
+	labelEl.textContent = label;
+	let inputEl;
+	if (type === "textarea") {
+		inputEl = document.createElement("textarea");
+	}
+	else {
+		inputEl = document.createElement("input");
+	}
+	div.appendChild(labelEl);
+	div.appendChild(inputEl);
+	return div;	
 }
