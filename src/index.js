@@ -6,7 +6,7 @@ let task1 = createTask("den", "a", "23", "low");
 addTask(task1);
 
 addTaskBtn.addEventListener("click", () => {
-	mainContainer.style.filter =  "blur(10px)";
+	mainContainer.style.filter = "blur(10px)";
 	taskManager.style.display = "flex";
 	addTaskBtn.style.cursor = "default";
 });

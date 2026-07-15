@@ -18,5 +18,4 @@ function addTask(task) {
 	taskList.appendChild(div);
 }
 
-
-export {mainContainer, addTaskBtn, createTask, addTask };
+export { mainContainer, addTaskBtn, createTask, addTask };

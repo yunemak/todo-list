@@ -19,6 +19,7 @@ confirmBtn.addEventListener("click", () => {
 function closeTaskManager() {
 	taskManager.style.display = "none";
 	mainContainer.style.filter = "none";
+
 	addTaskBtn.style.cursor = "pointer";
 }
 
