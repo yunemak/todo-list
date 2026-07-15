@@ -1,5 +1,7 @@
 import "./style.css";
 
+const body = document.querySelector("body");
+const mainContainer = document.querySelector(".main-container");
 const taskList = document.querySelector(".task-list");
 const addTaskBtn = document.querySelector("#add-task-btn");
 
@@ -15,10 +17,11 @@ addTask(task1);
 // functions
 
 function openTaskManager() {
+	mainContainer.style.filter =  "blur(10px)";
 	let div = document.createElement("div");
 	div.classList.add("task-manager");
 	div.textContent = "deneme";
-	taskList.appendChild(div);
+	body.appendChild(div);
 }
 
 function createTask(title, description, dueDate, priority) {
