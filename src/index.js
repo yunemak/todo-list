@@ -1,5 +1,5 @@
 import "./style.css";
-import { mainContainer, taskList, addTaskBtn, createTask, addTask } from "./global.js";
+import { mainContainer, addTaskBtn, createTask, addTask } from "./global.js";
 import { taskManager } from "./taskManager.js";
 
 let task1 = createTask("den", "a", "23", "low");
