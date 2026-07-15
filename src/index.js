@@ -25,11 +25,8 @@ function createTaskManager() {
 	let div = document.createElement("div");
 	div.classList.add("task-manager");
 
-	let closeBtn = document.createElement("button");
-	closeBtn.classList.add("close-btn");
-	closeBtn.textContent = "X";
-	div.appendChild(closeBtn);
 
+	div.appendChild(createCloseBtn());
 	div.appendChild(createTitle("Task Manager"));
 	
 	let form = document.createElement("form");
@@ -41,6 +38,14 @@ function createTaskManager() {
 	div.appendChild(form);
 
 	return div;
+}
+
+function createCloseBtn() {
+	let closeBtn = document.createElement("button");
+	closeBtn.classList.add("close-btn");
+	closeBtn.textContent = "X";
+	
+	return closeBtn;
 }
 
 function createTask(title, description, dueDate, priority) {
