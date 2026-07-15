@@ -12,6 +12,8 @@ export default {
   },
   devtool: "eval-source-map",
   devServer: {
+	liveReload: true,
+	hot: true,
     watchFiles: ["./src/template.html"],
   },
   plugins: [
