@@ -35,6 +35,8 @@ function createTaskManager() {
 	let form = document.createElement("form");
 	form.appendChild(createInput("Title:", "text"));
 	form.appendChild(createInput("Description:", "textarea"));
+	form.appendChild(createInput("Due Date:", "date"));
+	form.appendChild(createPriority());
 
 	div.appendChild(form);
 
@@ -66,23 +68,42 @@ function createTitle(title) {
 	return h3;
 }
 
-function createDescription(description) {
-
-}
-
-function createDueDate(dueDate) {
-
-}
-
-function createPriority(priority) {
-
-}
-
 function createCheckbox() {
 	let check = document.createElement("button");
 
 	check.type = "checkbox";
 	return check;
+}
+
+
+
+function createPriority() {
+	let mainDiv = document.createElement("div");
+	mainDiv.classList.add("priority");
+	let labelEl = document.createElement("label");
+	labelEl.textContent = "Priority:";
+	mainDiv.appendChild(labelEl);
+
+	let divPriority = document.createElement("div");
+	mainDiv.appendChild(divPriority);
+
+	let priority = ["low", "intermediate", "high"];
+
+	for (let el in priority) {
+		let div = document.createElement("div");
+		let label = document.createElement("label");
+		label.textContent = priority[el];
+		label.htmlFor = el;
+		let radio = document.createElement("button");
+		radio.type = "radio";
+		radio.id = el;
+		div.appendChild(label);
+		div.appendChild(radio);
+		divPriority.appendChild(div);
+	}
+
+
+	return mainDiv;
 }
 
 function createInput(label, type) {
@@ -96,6 +117,7 @@ function createInput(label, type) {
 	}
 	else {
 		inputEl = document.createElement("input");
+		inputEl.type = type;
 	}
 	div.appendChild(labelEl);
 	div.appendChild(inputEl);

@@ -103,11 +103,24 @@ button[type="checkbox"] {
 	gap: 10px;
 }
 
-.entry {
+.entry, .priority {
 	max-width: 95%;
 
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	column-gap: 10px;
 	justify-content: flex-start;
+}
+
+.priority > div {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.priority button[type="radio"] {
+	width: 15px;
+	height: 15px;
+
 }
