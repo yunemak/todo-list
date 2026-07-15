@@ -54,7 +54,17 @@ html {
 /* Task List */
 
 .task {
-	background-color: red;
+	border-bottom: 2px solid black;
+	padding: 10px;
+	/* Layout inside */
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+button[type="checkbox"] {
+	width: 20px;
+	height: 20px;
 }
 
 .task-manager {

@@ -8,7 +8,7 @@ addTaskBtn.addEventListener("click", () => {
 });
 
 let task1 = createTask("den", "a", "23", "low");
-renderTask(task1);
+addTask(task1);
 
 
 
@@ -30,10 +30,11 @@ function createTask(title, description, dueDate, priority) {
 	}
 };
 
-function renderTask(task) {
+function addTask(task) {
 	let div = document.createElement("div");
 	div.classList.add("task");
 
+	div.appendChild(createCheckbox());
 	div.appendChild(createTitle(task.title));
 
 	taskList.appendChild(div);
@@ -55,4 +56,11 @@ function createDueDate(dueDate) {
 
 function createPriority(priority) {
 
+}
+
+function createCheckbox() {
+	let check = document.createElement("button");
+
+	check.type = "checkbox";
+	return check;
 }
