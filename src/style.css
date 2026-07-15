@@ -86,6 +86,17 @@ button[type="checkbox"] {
 	gap: 10px;
 }
 
+.close-btn {
+	align-self: flex-end;
+	width: 30px;
+	height: 30px;
+	background-color: red;
+	color: white;
+	border-radius: 50%;
+	border: 2px solid black;
+	cursor: pointer;
+}
+
 .task-manager > form {
 	display: flex;
 	flex-direction: column;

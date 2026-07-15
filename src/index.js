@@ -25,6 +25,11 @@ function createTaskManager() {
 	let div = document.createElement("div");
 	div.classList.add("task-manager");
 
+	let closeBtn = document.createElement("button");
+	closeBtn.classList.add("close-btn");
+	closeBtn.textContent = "X";
+	div.appendChild(closeBtn);
+
 	div.appendChild(createTitle("Task Manager"));
 	
 	let form = document.createElement("form");
