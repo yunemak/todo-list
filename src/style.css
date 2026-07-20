@@ -61,9 +61,6 @@ html {
 	bottom: 20px;
 }
 
-
-/* Workspace */
-
 /* Menu */
 
 .menu {
@@ -103,9 +100,11 @@ button[type="checkbox"] {
 	height: 20px;
 }
 
+/* Managers */
+
 /* Task Manager */
 
-.task-manager {
+.task-manager, .workspace-manager {
 	padding: 10px;
 	background-color: antiquewhite;
 	border: 3px solid black;
@@ -122,7 +121,7 @@ button[type="checkbox"] {
 	gap: 10px;
 }
 
-.close-btn {
+.close-task-manager-btn, .close-workspace-manager {
 	align-self: flex-end;
 	width: 30px;
 	height: 30px;
@@ -133,7 +132,7 @@ button[type="checkbox"] {
 	cursor: pointer;
 }
 
-.task-manager > form {
+.task-manager > form, .workspace-manager > form {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;

@@ -1,7 +1,7 @@
 import { mainContainer, addTaskBtn, createTask, addTask } from "./global.js";
 
 const taskManager = document.querySelector(".task-manager");
-const closeTaskManagerBtn = document.querySelector(".close-btn");
+const closeTaskManagerBtn = document.querySelector(".close-task-manager-btn");
 const confirmBtn = document.querySelector(".confirm-btn");
 const titleInput = document.querySelector("#title");
 

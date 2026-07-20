@@ -2,6 +2,7 @@ import "./style.css";
 import { mainContainer, addTaskBtn, createTask, addTask } from "./global.js";
 import { taskManager } from "./taskManager.js";
 import "./sidebar.js";
+import "./workspaceManager.js";
 
 let task1 = createTask("den", "a", "23", "low");
 addTask(task1);
