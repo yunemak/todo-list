@@ -12,6 +12,7 @@ html {
 }
 
 .side-bar {
+	padding: 20px;
 	flex: 1;
 	border-right: 2px solid black;
 	background-color: antiquewhite;
@@ -29,6 +30,25 @@ html {
 	flex-direction: column;
 }
 
+/* Side Bar */
+
+#close-sidebar-btn {
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 1px 2px;
+	border: 2px solid gray;
+	border-radius: 10px;
+	background-color: aliceblue;
+	cursor: pointer;
+}
+
+#add-workspace-btn {
+	position: absolute;
+	bottom: 20px;
+}
+
+
 /* Workspace */
 
 /* Menu */
@@ -41,7 +61,7 @@ html {
 	display: flex;
 }
 
-#add-task-btn {
+#add-task-btn, #add-workspace-btn {
 	color: black;
 	font-weight: bold;
 	font-size: 20px;
