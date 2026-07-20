@@ -11,7 +11,7 @@ html {
 	height: 100vh;
 }
 
-.side-bar {
+.sidebar {
 	position: relative;
 	padding: 20px;
 	flex: 1;
@@ -33,20 +33,28 @@ html {
 
 /* Side Bar */
 
-#close-sidebar-btn {
+#close-sidebar-btn, #open-sidebar-btn {
 	border: none;
 	background: none;
 	cursor: pointer;
 	width: 40px;
 	height: 40px;
-	position: absolute;
-	right: 10px;
-	top: 10px;
 	/* Layout inside */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+#close-sidebar-btn {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+#open-sidebar-btn {
+	display: none;
+}
+
 
 #add-workspace-btn {
 	position: absolute;
@@ -64,6 +72,8 @@ html {
 	padding: 10px;
 	/* Layout inside */
 	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 #add-task-btn, #add-workspace-btn {
