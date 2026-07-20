@@ -1,5 +1,11 @@
 @import url("./reset.css");
 
+:root {
+	--color-background: #342E37; /* shadow grey */
+	--color-font: #FAFFFD; /* porcelain */
+	--color-font-hover: #29242b;
+}
+
 html {
 	font-family: "Open Sans", sans-serif;
 }
@@ -12,11 +18,12 @@ html {
 }
 
 .sidebar {
+	color: var(--color-font);
 	position: relative;
 	padding: 20px;
 	flex: 1;
-	border-right: 2px solid black;
-	background-color: antiquewhite;
+	border-right: 2px solid var(--color-font);
+	background-color: var(--color-background);
 	/* Layout inside */
 	display: flex;
 	flex-direction: column;
@@ -24,8 +31,9 @@ html {
 }
 
 .workspace {
+	color: var(--color-font);
 	flex: 5;
-	background-color: aliceblue;
+	background-color: var(--color-background);
 	/* Layout inside */
 	display: flex;
 	flex-direction: column;
@@ -61,37 +69,38 @@ html {
 	bottom: 20px;
 }
 
+#add-workspace-btn, #add-task-btn {
+	padding: 5px 10px;
+	background-color: var(--color-background);
+	color: var(--color-font);
+	border: 2px solid var(--color-font);
+	cursor: pointer;
+}
+
+#add-workspace-btn:hover, #add-task-btn:hover {
+	background-color: var(--color-font-hover);
+}
+
 /* Menu */
 
 .menu {
-	border-bottom: 2px solid black;
-	background-color: antiquewhite;
+	border-bottom: 2px solid var(--color-font);
+	background-color: var(--color-background);
 	padding: 10px;
 	/* Layout inside */
 	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-#add-task-btn, #add-workspace-btn {
-	color: black;
 	font-weight: bold;
 	font-size: 20px;
 	padding: 10px 20px;
-	border: 2px solid gray;
-	border-radius: 10px;
-	background-color: aliceblue;
 	cursor: pointer;
 }
 
 /* Task List */
 
 .task {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid var(--color-font);
 	padding: 10px;
 	/* Layout inside */
-	display: flex;
-	align-items: center;
 	gap: 10px;
 }
 
@@ -106,8 +115,8 @@ button[type="checkbox"] {
 
 .task-manager, .workspace-manager {
 	padding: 10px;
-	background-color: antiquewhite;
-	border: 3px solid black;
+	background-color: var(--color-font);
+	border: 3px solid var(--color-background);
 	width: 600px;
 	height: 600px;
 	position: fixed;
