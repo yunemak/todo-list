@@ -1,0 +1,61 @@
+.task-manager, .workspace-manager {
+	padding: 10px;
+	background-color: var(--color-font);
+	border: 3px solid var(--color-background);
+	width: 600px;
+	height: 600px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* Layout inside */
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.close-task-manager-btn, .close-workspace-manager {
+	align-self: flex-end;
+	width: 30px;
+	height: 30px;
+	background-color: red;
+	color: white;
+	border-radius: 50%;
+	border: 2px solid black;
+	cursor: pointer;
+}
+
+.task-manager > form, .workspace-manager > form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.entry, .priority {
+	max-width: 95%;
+
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	column-gap: 10px;
+	justify-content: flex-start;
+}
+
+.priority > div {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.priority button[type="radio"] {
+	width: 15px;
+	height: 15px;
+
+}
+
+.confirm-btn {
+	background-color: lightgreen;
+	border: 1px solid black;
+	color: black;
+}
