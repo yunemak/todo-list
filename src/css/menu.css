@@ -7,11 +7,13 @@
 	font-weight: bold;
 	/* Layout inside */
 	display: flex;
+	align-items: center;
 	gap: 10px;
 }
 
 #add-task-btn {
-	padding: 5px 10px;
+	width: 90px;
+	height: 40px;
 	background-color: var(--color-background);
 	color: var(--color-font);
 	border: 2px solid var(--color-font);
