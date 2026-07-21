@@ -21,6 +21,7 @@ function renderWorkspaces() {
 	workspacesDiv.replaceChildren();
 	workspaces.forEach((workspace) => {
 		let div = document.createElement("div");
+		div.classList.add("workspace");
 		div.textContent = workspace.name;
 		workspacesDiv.appendChild(div);
 	});
