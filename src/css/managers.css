@@ -15,7 +15,13 @@
 	gap: 10px;
 }
 
-.close-task-manager-btn, .close-workspace-manager {
+.workspace-manager > div:first-child {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.close-task-manager-btn, .close-workspace-manager-btn {
 	align-self: flex-end;
 	width: 30px;
 	height: 30px;
