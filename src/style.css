@@ -40,6 +40,10 @@ html {
 	gap: 10px;
 }
 
+.task:hover {
+	background-color: var(--color-font-hover);
+}
+
 button[type="checkbox"] {
 	width: 20px;
 	height: 20px;
