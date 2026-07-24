@@ -1,4 +1,4 @@
-import { mainContainer, taskList } from "./global.js";
+import { mainContainer, selectedWorkspace } from "./global.js";
 
 const taskManager = document.querySelector(".task-manager");
 const closeTaskManagerBtn = document.querySelector(".close-task-manager-btn");
@@ -69,7 +69,7 @@ function addTask(task) {
 	div.appendChild(dueDate);
 
 
-	taskList.appendChild(div);
+	selectedWorkspace.appendChild(div);
 }
 
 export { taskManager, createTask, addTask };

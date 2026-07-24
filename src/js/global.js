@@ -1,4 +1,4 @@
 const mainContainer = document.querySelector(".main-container");
-const taskList = document.querySelector(".task-list");
+const selectedWorkspace = document.querySelector(".selected-workspace");
 
-export { mainContainer, taskList };
+export { mainContainer, selectedWorkspace };

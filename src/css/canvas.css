@@ -1,3 +1,38 @@
+.canvas {
+	flex: 5;
+}
+
+.selected-workspace {
+	color: var(--color-font);
+	flex: 5;
+	background-color: var(--color-background);
+	/* Layout inside */
+	display: flex;
+	flex-direction: column;
+}
+
+/* Task List */
+
+.task {
+	border-bottom: 2px solid var(--color-font);
+	padding: 10px;
+	/* Layout inside */
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.task:hover {
+	background-color: var(--color-font-hover);
+}
+
+button[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+}
+
+/* Menu */
+
 .menu {
 	border-bottom: 2px solid var(--color-font);
 	background-color: var(--color-background);
