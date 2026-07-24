@@ -16,6 +16,7 @@
 /* Task List */
 
 .task {
+	position: relative;
 	box-shadow: 5px 5px 20px var(--color-background-shadow);
 	width: 400px;
 	height: 400px;

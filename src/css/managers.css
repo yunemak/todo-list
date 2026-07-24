@@ -71,3 +71,28 @@
 	border: 1px solid black;
 	color: black;
 }
+
+.task-options {
+	padding-top: 10px;
+	border-top: 1px solid var(--color-font);
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	/* Layout inside */
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+}
+
+.delete-btn, .edit-btn, .checkbox-btn {
+	width: 30px;
+	height: 30px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
