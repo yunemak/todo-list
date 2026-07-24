@@ -49,9 +49,6 @@ function addTask(task) {
 	let div = document.createElement("div");
 	div.classList.add("task");
 
-	let checkbox = document.createElement("input");
-	checkbox.type = "checkbox";
-	div.appendChild(checkbox);
 	
 	let priority = document.createElement("p");
 	// Make color later
@@ -68,6 +65,9 @@ function addTask(task) {
 	dueDate.textContent = task.dueDate;
 	div.appendChild(dueDate);
 
+	let checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	div.appendChild(checkbox);
 
 	selectedWorkspace.appendChild(div);
 }
