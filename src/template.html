@@ -32,10 +32,10 @@
 	<div class="task-manager">
 		<h3>Task Manager</h3>
 		<button type="button" class="close-task-manager-btn">X</button>
-		<form>
+		<form id="task-form">
 			<div class="entry">
 				<label>Title:</label>
-				<input id="title">
+				<input id="title" minlength="1" required>
 			</div>
 			<div class="entry">
 				<label>Description:</label>
@@ -43,13 +43,13 @@
 			</div>
 			<div class="entry">
 				<label>Due Date:</label>
-				<input type="date">
+				<input type="date" required>
 			</div>
 			<div class="entry">
 				<label>Priority:</label>
 				<div class="priority">
 					<div>
-						<input id="low-priority" type="radio" name="priority">
+						<input id="low-priority" type="radio" name="priority" checked>
 						<label for="low-priority">low</label>
 					</div>
 					<div>
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 			</div>
-			<button type="button" class="confirm-btn">Confirm</button>
+			<button class="confirm-btn">Confirm</button>
 		</form>
 	</div>
 	<div class="workspace-manager">

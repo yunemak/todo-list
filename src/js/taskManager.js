@@ -5,7 +5,7 @@ const closeTaskManagerBtn = document.querySelector(".close-task-manager-btn");
 const confirmBtn = document.querySelector(".confirm-btn");
 const titleInput = document.querySelector("#title");
 const addTaskBtn = document.querySelector("#add-task-btn");
-
+const taskForm = document.querySelector("#task-form");
 
 addTaskBtn.addEventListener("click", () => {
 	mainContainer.style.filter = "blur(5px)";
@@ -17,7 +17,8 @@ closeTaskManagerBtn.addEventListener("click", () => {
 	closeTaskManager();
 });
 
-confirmBtn.addEventListener("click", () => {
+taskForm.addEventListener("submit", (e) => {
+	e.preventDefault();
 	let task = createTask(titleInput.value);
 	addTask(task);
 	closeTaskManager();
