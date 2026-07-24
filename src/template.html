@@ -34,30 +34,30 @@
 		<button type="button" class="close-task-manager-btn">X</button>
 		<form id="task-form">
 			<div class="entry">
-				<label>Title:</label>
+				<label for="title">Title:</label>
 				<input id="title" minlength="1" required>
 			</div>
 			<div class="entry">
-				<label>Description:</label>
-				<textarea></textarea>
+				<label for="description">Description:</label>
+				<textarea id="description"></textarea>
 			</div>
 			<div class="entry">
-				<label>Due Date:</label>
-				<input type="date" required>
+				<label for="due-date">Due Date:</label>
+				<input id="due-date" type="date" required>
 			</div>
 			<div class="entry">
-				<label>Priority:</label>
+				<label for="priority">Priority:</label>
 				<div class="priority">
 					<div>
-						<input id="low-priority" type="radio" name="priority" checked>
+						<input id="low-priority" type="radio" name="priority" value="low" checked>
 						<label for="low-priority">low</label>
 					</div>
 					<div>
-						<input id="intermediate-priority" type="radio" name="priority">
-						<label for="intermediate-priority">intermediate</label>
+						<input id="intermediate-priority" type="radio" name="priority" value="medium">
+						<label for="intermediate-priority">medium</label>
 					</div>
 					<div>
-						<input id="urgent-priority" type="radio" name="priority">
+						<input id="urgent-priority" type="radio" name="priority" value="urgent">
 						<label for="urgent-priority">urgent</label>
 					</div>
 				</div>

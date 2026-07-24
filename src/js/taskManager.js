@@ -1,11 +1,17 @@
 import { mainContainer, selectedWorkspace } from "./global.js";
 
 const taskManager = document.querySelector(".task-manager");
+const taskForm = document.querySelector("#task-form");
 const closeTaskManagerBtn = document.querySelector(".close-task-manager-btn");
 const confirmBtn = document.querySelector(".confirm-btn");
-const titleInput = document.querySelector("#title");
 const addTaskBtn = document.querySelector("#add-task-btn");
-const taskForm = document.querySelector("#task-form");
+
+// Form inputs
+const titleInput = document.querySelector("#title");
+const descriptionInput = document.querySelector("#description");
+const dueDateInput = document.querySelector("#due-date");
+const priorityInput = document.querySelector("input[name='priority']:checked");
+
 
 addTaskBtn.addEventListener("click", () => {
 	mainContainer.style.filter = "blur(5px)";
@@ -19,7 +25,7 @@ closeTaskManagerBtn.addEventListener("click", () => {
 
 taskForm.addEventListener("submit", (e) => {
 	e.preventDefault();
-	let task = createTask(titleInput.value);
+	let task = createTask(titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value);
 	addTask(task);
 	closeTaskManager();
 	clearInputs();
