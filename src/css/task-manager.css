@@ -1,50 +1,3 @@
-.task-manager {
-	padding: 10px;
-	background-color: var(--color-font);
-	border: 3px solid var(--color-background);
-	width: 600px;
-	height: 600px;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	/* Layout inside */
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.close-task-manager-btn {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	width: 30px;
-	height: 30px;
-	background-color: red;
-	color: white;
-	border-radius: 50%;
-	border: 2px solid black;
-	cursor: pointer;
-}
-
-.task-manager > form {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.entry {
-	max-width: 95%;
-	/* Layout inside  */
-	display: grid;
-	grid-template-columns: 1fr 3fr;
-	column-gap: 10px;
-	justify-content: flex-start;
-}
-
-
-
 .priority-options {
 	display: flex;
 	flex-direction: column;
@@ -62,8 +15,3 @@
 
 }
 
-.confirm-btn {
-	background-color: lightgreen;
-	border: 1px solid black;
-	color: black;
-}

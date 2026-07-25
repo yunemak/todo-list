@@ -4,7 +4,7 @@ const addWorkspaceBtn = document.getElementById("add-workspace-btn");
 const workspacesDiv = document.querySelector(".workspaces");
 const confirmWorkspaceBtn = document.getElementById("confirm-workspace-btn");
 const workspaceManager = document.querySelector(".workspace-manager");
-const closeWorkspaceManagerBtn = document.querySelector(".close-workspace-manager-btn");
+const closeWorkspaceManagerBtn = document.getElementById("close-workspace-manager-btn");
 
 let initialWorkspace = createWorkspace("My Workspace");
 let workspaces = [initialWorkspace];

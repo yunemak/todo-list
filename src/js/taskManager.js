@@ -4,7 +4,7 @@ import editImg from "../assets/edit.png";
 
 const taskManager = document.querySelector(".task-manager");
 const taskForm = document.querySelector("#task-form");
-const closeTaskManagerBtn = document.querySelector(".close-task-manager-btn");
+const closeTaskManagerBtn = document.getElementById("close-task-manager-btn");
 const confirmBtn = document.querySelector(".confirm-btn");
 const addTaskBtn = document.querySelector("#add-task-btn");
 
