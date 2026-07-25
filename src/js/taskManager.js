@@ -12,7 +12,6 @@ const addTaskBtn = document.querySelector("#add-task-btn");
 const titleInput = document.querySelector("#title");
 const descriptionInput = document.querySelector("#description");
 const dueDateInput = document.querySelector("#due-date");
-const priorityInput = document.querySelector("input[name='priority-options']:checked");
 
 addTaskBtn.addEventListener("click", () => {
 	mainContainer.style.filter = "blur(5px)";
@@ -26,6 +25,7 @@ closeTaskManagerBtn.addEventListener("click", () => {
 
 taskForm.addEventListener("submit", (e) => {
 	e.preventDefault();
+	const priorityInput = document.querySelector("input[name='priority-options']:checked");
 	let task = createTask(
 		titleInput.value,
 		descriptionInput.value,
