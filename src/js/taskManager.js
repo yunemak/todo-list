@@ -61,19 +61,28 @@ function addTask(task) {
 	let div = document.createElement("div");
 	div.classList.add("task");
 
+	// Priority
 	let priority = document.createElement("p");
 	// Make color later
 	priority.textContent = task.priority;
 	div.appendChild(priority);
 
+	// Title
 	let h3 = document.createElement("h3");
 	h3.textContent = task.title;
 	div.appendChild(h3);
 
+	// Due Date
 	let dueDate = document.createElement("div");
 	dueDate.textContent = task.dueDate;
 	div.appendChild(dueDate);
 
+	// Description
+	let description = document.createElement("p");
+	description.textContent = task.description;
+	div.appendChild(description);
+
+	// Options
 	let taskOptions = document.createElement("div");
 	taskOptions.classList.add("task-options");
 	div.appendChild(taskOptions);
