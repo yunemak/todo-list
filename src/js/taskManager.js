@@ -2,7 +2,7 @@ import { mainContainer, selectedWorkspace } from "./global.js";
 import trashBinImg from "../assets/trash-bin.png";
 import editImg from "../assets/edit.png";
 
-const taskManager = document.querySelector(".task-manager");
+const taskManager = document.getElementById("task-manager");
 const taskForm = document.querySelector("#task-form");
 const closeTaskManagerBtn = document.getElementById("close-task-manager-btn");
 const confirmBtn = document.querySelector(".confirm-btn");
