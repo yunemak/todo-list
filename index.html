@@ -10,18 +10,73 @@
 <script defer src="main.js"></script></head>
 <body>
 	<div class="main-container">
-		<div class="side-bar">
+		<div class="sidebar">
+			<button id="close-sidebar-btn"><img src="c511d2cf7f41e8c107ba.png" width="40px" height="40px"></button>
 			<h1>Workspaces</h1>
-		</div>
-		<div class="workspace">
-			<div class="menu">
-				<button id="add-task-btn">Add Task</button>
+			<div class="workspaces">
+
 
 			</div>
-			<div class="task-list">
-				
+			<button id="add-workspace-btn">Add workspace</button>
+		</div>
+		<div class="canvas">
+			<div class="menu">
+				<button id="open-sidebar-btn"><img src="c511d2cf7f41e8c107ba.png" width="40px" height="40px"></button>
+				<button id="add-task-btn">Add Task</button>
+			</div>
+			<div class="selected-workspace">
+
 			</div>
 		</div>
+	</div>
+	<div class="manager task-manager">
+		<h3>Task Manager</h3>
+		<button type="button" class="close-btn" id="close-task-manager-btn">X</button>
+		<form id="task-form">
+			<div class="entry">
+				<label for="title">Title:</label>
+				<input id="title" minlength="1" required>
+			</div>
+			<div class="entry">
+				<label for="description">Description:</label>
+				<textarea id="description"></textarea>
+			</div>
+			<div class="entry">
+				<label for="due-date">Due Date:</label>
+				<input id="due-date" type="date" required>
+			</div>
+			<div class="entry">
+				<label for="priority-options">Priority:</label>
+				<div class="priority-options">
+					<div>
+						<input id="low-priority" type="radio" name="priority-options" value="low" checked>
+						<label for="low-priority">low</label>
+					</div>
+					<div>
+						<input id="medium-priority" type="radio" name="priority-options" value="medium">
+						<label for="medium-priority">medium</label>
+					</div>
+					<div>
+						<input id="high-priority" type="radio" name="priority-options" value="high">
+						<label for="high-priority">high</label>
+					</div>
+				</div>
+			</div>
+			<button class="confirm-btn">Confirm</button>
+		</form>
+	</div>
+	<div class="manager workspace-manager">
+		<div>
+			<h3>Workspace Manager</h3>
+			<button type="button" class="close-btn" id="close-workspace-manager-btn">X</button>
+		</div>
+		<form>
+			<div class="entry">
+				<label>Workspace Name:</label>
+				<input type="text">
+			</div>
+			<button type="button" id="confirm-workspace-btn">Confirm</button>
+		</form>
 	</div>
 </body>
 </html>
