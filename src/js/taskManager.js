@@ -1,6 +1,6 @@
 import { mainContainer, selectedWorkspace } from "./global.js";
-import trashBinImg from "../assets/trash-bin.png";
-import editImg from "../assets/edit.png";
+import trashBinImg from "./../assets/trash-bin.png";
+import editImg from "./../assets/edit.png";
 
 const taskManager = document.getElementById("task-manager");
 const taskForm = document.querySelector("#task-form");
