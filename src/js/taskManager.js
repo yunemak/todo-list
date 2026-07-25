@@ -63,8 +63,8 @@ function addTask(task) {
 
 	// Priority
 	let priority = document.createElement("p");
-	// Make color later
-	priority.textContent = task.priority;
+	priority.classList.add("priority");
+	priority.classList.add(`${task.priority}-priority`);
 	div.appendChild(priority);
 
 	// Title
