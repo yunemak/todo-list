@@ -1,4 +1,5 @@
 import { mainContainer } from "./global.js";
+import { addTask, createTask } from "./taskManager.js";
 
 const workspaceManager = document.getElementById("workspace-manager");
 const addWorkspaceBtn = document.getElementById("add-workspace-btn");
@@ -9,7 +10,14 @@ const closeWorkspaceManagerBtn = document.getElementById("close-workspace-manage
 // Input
 const workspaceNameInput = document.getElementById("workspace-name");
 
+// Initial Workspace
 let initialWorkspace = createWorkspace("My Workspace");
+
+initialWorkspace.taskList.push(createTask("Drink Water", "You have to drink water to stay alive", "26-07-2026", "high"));
+initialWorkspace.taskList.push(createTask("Eat Meal", "You have to eat to stay energytic", "26-07-2026", "medium"));
+initialWorkspace.taskList.push(createTask("Eat Vegetable", "Eating vegatable is important to your health", "26-07-2026", "low"));
+
+
 let workspaces = [initialWorkspace];
 
 renderWorkspaces();
@@ -31,6 +39,7 @@ workspaceForm.addEventListener("submit", (e) => {
 	closeWorkspaceManager();
 })
 
+
 function createWorkspace(name) {
 	let taskList = [];
 	return { name, taskList };
@@ -42,6 +51,9 @@ function renderWorkspaces() {
 		let div = document.createElement("div");
 		div.classList.add("workspace");
 		div.textContent = workspace.name;
+		for (let task of workspace.taskList) {
+			addTask(task);
+		}
 		workspacesDiv.appendChild(div);
 	});
 };
