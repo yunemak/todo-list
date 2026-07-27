@@ -46,6 +46,12 @@ function renderTask(task) {
 	div.appendChild(description);
 
 	// Options
+	addTaskOptions(div);
+
+	selectedWorkspace.appendChild(div);
+}
+
+function addTaskOptions(div) {
 	let taskOptions = document.createElement("div");
 	taskOptions.classList.add("task-options");
 	div.appendChild(taskOptions);
@@ -59,8 +65,6 @@ function renderTask(task) {
 	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
 	taskOptions.appendChild(editBtn);
 	taskOptions.appendChild(deleteBtn);
-
-	selectedWorkspace.appendChild(div);
 }
 
 function createButton(img, className) {
