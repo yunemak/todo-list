@@ -55,28 +55,27 @@ function renderTask(task) {
 	checkbox.type = "checkbox";
 	taskOptions.appendChild(checkbox);
 
-	let editBtn = document.createElement("button");
-	editBtn.type = "button";
-	editBtn.classList.add("edit-btn");
+	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
+	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
 	taskOptions.appendChild(editBtn);
-
-	let editIcon = document.createElement("img");
-	editIcon.src = editImg;
-	editIcon.classList.add("icon");
-	editBtn.appendChild(editIcon);
-
-	let deleteBtn = document.createElement("button");
-	deleteBtn.type = "button";
-	deleteBtn.classList.add("delete-btn");
-
-	let deleteIcon = document.createElement("img");
-	deleteIcon.src = trashBinImg;
-	deleteIcon.classList.add("icon");
-	deleteBtn.appendChild(deleteIcon);
-
 	taskOptions.appendChild(deleteBtn);
 
 	selectedWorkspace.appendChild(div);
+}
+
+function createButton(img, className) {
+	let button = document.createElement("button");
+	button.type = "button";
+	button.classList.add(className);
+	button.appendChild(img);
+	return button;
+}
+
+function createImg(src, className) {
+	let img = document.createElement("img");
+	img.src = src;
+	img.classList.add(className);
+	return img;
 }
 
 export { renderWorkspaces, renderTask };
