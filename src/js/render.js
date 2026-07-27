@@ -5,9 +5,7 @@ import editImg from "./../assets/edit.png";
 function renderWorkspaces() {
 	selectedWorkspace.replaceChildren();
 	workspacesDiv.replaceChildren();
-	console.log(workspaces);
 	workspaces.forEach((workspace) => {
-		console.log(workspace.name);
 		let div = document.createElement("div");
 		div.classList.add("workspace");
 		div.textContent = workspace.name;

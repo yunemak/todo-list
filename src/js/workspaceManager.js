@@ -57,11 +57,9 @@ closeWorkspaceManagerBtn.addEventListener("click", (e) => {
 });
 
 workspaceForm.addEventListener("submit", (e) => {
-	console.log("here");
 	e.preventDefault();
 	workspaces.push(createWorkspace(workspaceNameInput.value));
 	renderWorkspaces();
-	console.log(workspaces);
 	closeWorkspaceManager();
 });
 
