@@ -21,6 +21,8 @@ const workspaceNameInput = document.getElementById("workspace-name");
 let initialWorkspace = createWorkspace("My Workspace");
 initialWorkspace.isSelected = true;
 
+workspaces.push(initialWorkspace);
+
 initialWorkspace.taskList.push(
 	createTask(
 		"Drink Water",
