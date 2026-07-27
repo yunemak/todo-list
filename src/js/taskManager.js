@@ -1,6 +1,6 @@
 import { mainContainer, selectedWorkspace } from "./global.js";
 
-import { renderTask } from "./render.js";
+import { renderTask } from "./renderTask.js";
 
 const taskManager = document.getElementById("task-manager");
 const taskForm = document.querySelector("#task-form");
@@ -59,4 +59,4 @@ function createTask(title, description, dueDate, priority) {
 	};
 }
 
-export { taskManager, createTask, renderTask };
+export { taskManager, createTask };

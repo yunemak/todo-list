@@ -2,21 +2,7 @@ import { selectedWorkspace, workspacesDiv, workspaces } from "./global.js";
 import trashBinImg from "./../assets/trash-bin.png";
 import editImg from "./../assets/edit.png";
 
-function renderWorkspaces() {
-	selectedWorkspace.replaceChildren();
-	workspacesDiv.replaceChildren();
-	workspaces.forEach((workspace) => {
-		let div = document.createElement("div");
-		div.classList.add("workspace");
-		div.textContent = workspace.name;
-		if (workspace.isSelected) {
-			for (let task of workspace.taskList) {
-				renderTask(task);
-			}
-		}
-		workspacesDiv.appendChild(div);
-	});
-}
+
 
 function renderTask(task) {
 	let div = document.createElement("div");
@@ -80,4 +66,4 @@ function createImg(src, className) {
 	return img;
 }
 
-export { renderWorkspaces, renderTask };
+export { renderTask };
