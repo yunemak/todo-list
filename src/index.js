@@ -1,5 +1,5 @@
 import "./style.css";
-import { createTask, addTask } from "./js/taskManager.js";
+import "./js/taskManager.js";
 import "./js/sidebar.js";
 import "./js/workspaceManager.js";
-	
+import "./js/eventLoop.js";
