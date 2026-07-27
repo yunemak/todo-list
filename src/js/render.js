@@ -1,0 +1,82 @@
+import { selectedWorkspace, workspacesDiv, workspaces } from "./global.js";
+import trashBinImg from "./../assets/trash-bin.png";
+import editImg from "./../assets/edit.png";
+
+function renderWorkspaces() {
+	selectedWorkspace.replaceChildren();
+	workspacesDiv.replaceChildren();
+	console.log(workspaces);
+	workspaces.forEach((workspace) => {
+		console.log(workspace.name);
+		let div = document.createElement("div");
+		div.classList.add("workspace");
+		div.textContent = workspace.name;
+		if (workspace.isSelected) {
+			for (let task of workspace.taskList) {
+				renderTask(task);
+			}
+		}
+		workspacesDiv.appendChild(div);
+	});
+}
+
+function renderTask(task) {
+	let div = document.createElement("div");
+	div.classList.add("task");
+
+	// Priority
+	let priority = document.createElement("p");
+	priority.classList.add("priority");
+	priority.classList.add(`${task.priority}-priority`);
+	div.appendChild(priority);
+
+	// Title
+	let h3 = document.createElement("h3");
+	h3.textContent = task.title;
+	div.appendChild(h3);
+
+	// Due Date
+	let dueDate = document.createElement("div");
+	dueDate.textContent = task.dueDate;
+	div.appendChild(dueDate);
+
+	// Description
+	let description = document.createElement("p");
+	description.textContent = task.description;
+	div.appendChild(description);
+
+	// Options
+	let taskOptions = document.createElement("div");
+	taskOptions.classList.add("task-options");
+	div.appendChild(taskOptions);
+
+	let checkbox = document.createElement("input");
+	checkbox.classList.add("checkbox-btn");
+	checkbox.type = "checkbox";
+	taskOptions.appendChild(checkbox);
+
+	let editBtn = document.createElement("button");
+	editBtn.type = "button";
+	editBtn.classList.add("edit-btn");
+	taskOptions.appendChild(editBtn);
+
+	let editIcon = document.createElement("img");
+	editIcon.src = editImg;
+	editIcon.classList.add("icon");
+	editBtn.appendChild(editIcon);
+
+	let deleteBtn = document.createElement("button");
+	deleteBtn.type = "button";
+	deleteBtn.classList.add("delete-btn");
+
+	let deleteIcon = document.createElement("img");
+	deleteIcon.src = trashBinImg;
+	deleteIcon.classList.add("icon");
+	deleteBtn.appendChild(deleteIcon);
+
+	taskOptions.appendChild(deleteBtn);
+
+	selectedWorkspace.appendChild(div);
+}
+
+export { renderWorkspaces, renderTask };
