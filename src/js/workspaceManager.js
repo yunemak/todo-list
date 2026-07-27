@@ -1,11 +1,18 @@
-import { mainContainer, selectedWorkspace } from "./global.js";
+import {
+	mainContainer,
+	selectedWorkspace,
+	workspacesDiv,
+	workspaces,
+} from "./global.js";
 import { addTask, createTask } from "./taskManager.js";
+import { renderWorkspaces } from "./eventLoop.js";
 
 const workspaceManager = document.getElementById("workspace-manager");
 const addWorkspaceBtn = document.getElementById("add-workspace-btn");
-const workspacesDiv = document.querySelector(".workspaces");
 const workspaceForm = document.getElementById("workspace-form");
-const closeWorkspaceManagerBtn = document.getElementById("close-workspace-manager-btn");
+const closeWorkspaceManagerBtn = document.getElementById(
+	"close-workspace-manager-btn",
+);
 
 // Input
 const workspaceNameInput = document.getElementById("workspace-name");
@@ -14,14 +21,30 @@ const workspaceNameInput = document.getElementById("workspace-name");
 let initialWorkspace = createWorkspace("My Workspace");
 initialWorkspace.isSelected = true;
 
-initialWorkspace.taskList.push(createTask("Drink Water", "You have to drink water to stay alive", "26-07-2026", "high"));
-initialWorkspace.taskList.push(createTask("Eat Meal", "You have to eat to stay energytic", "26-07-2026", "medium"));
-initialWorkspace.taskList.push(createTask("Eat Vegetable", "Eating vegatable is important to your health", "26-07-2026", "low"));
-
-
-let workspaces = [initialWorkspace];
-
-renderWorkspaces();
+initialWorkspace.taskList.push(
+	createTask(
+		"Drink Water",
+		"You have to drink water to stay alive",
+		"26-07-2026",
+		"high",
+	),
+);
+initialWorkspace.taskList.push(
+	createTask(
+		"Eat Meal",
+		"You have to eat to stay energytic",
+		"26-07-2026",
+		"medium",
+	),
+);
+initialWorkspace.taskList.push(
+	createTask(
+		"Eat Vegetable",
+		"Eating vegatable is important to your health",
+		"26-07-2026",
+		"low",
+	),
+);
 
 addWorkspaceBtn.addEventListener("click", (e) => {
 	openWorkspaceManager();
@@ -38,34 +61,18 @@ workspaceForm.addEventListener("submit", (e) => {
 	renderWorkspaces();
 	console.log(workspaces);
 	closeWorkspaceManager();
-})
+});
 
 function createWorkspace(name) {
 	let taskList = [];
 	let isSelected = false;
 	return { name, taskList, isSelected };
-};
-
-function renderWorkspaces() {
-	workspacesDiv.replaceChildren();
-	selectedWorkspace.replaceChildren();
-	workspaces.forEach((workspace) => {
-		let div = document.createElement("div");
-		div.classList.add("workspace");
-		div.textContent = workspace.name;
-		if (workspace.isSelected) {
-			for (let task of workspace.taskList) {
-				addTask(task);
-			}
-		}
-		workspacesDiv.appendChild(div);
-	});
-};
+}
 
 function openWorkspaceManager() {
 	mainContainer.style.filter = "blur(5px)";
 	workspaceManager.style.display = "flex";
-};
+}
 
 function closeWorkspaceManager() {
 	mainContainer.style.filter = "none";

@@ -1,4 +1,7 @@
 const mainContainer = document.querySelector(".main-container");
 const selectedWorkspace = document.querySelector(".selected-workspace");
+const workspacesDiv = document.querySelector(".workspaces");
 
-export { mainContainer, selectedWorkspace };
+let workspaces = [];
+
+export { mainContainer, selectedWorkspace, workspacesDiv, workspaces };
