@@ -70,12 +70,12 @@
 			<h3>Workspace Manager</h3>
 			<button type="button" class="close-btn" id="close-workspace-manager-btn">X</button>
 		</div>
-		<form>
+		<form id="workspace-form">
 			<div class="entry">
-				<label>Workspace Name:</label>
-				<input type="text">
+				<label for="workspace-name">Workspace Name:</label>
+				<input id="workspace-name" type="text" required minlength="1">
 			</div>
-			<button type="button" class="confirm-btn" id="confirm-workspace-btn">Confirm</button>
+			<button class="confirm-btn" id="confirm-workspace-btn">Confirm</button>
 		</form>
 	</div>
 </body>
