@@ -1,10 +1,4 @@
 @import url("./css/reset.css");
-@import url("./css/sidebar.css");
-@import url("./css/canvas.css");
-@import url("./css/managers.css");
-@import url("./css/task-manager.css");
-@import url("./css/workspace-manager.css");
-@import url("./css/task.css");
 
 :root {
 	--color-background: #342E37; /* shadow grey */
@@ -16,11 +10,3 @@
 html {
 	font-family: "Open Sans", sans-serif;
 }
-
-/* Containers */
-
-.main-container {
-	display: flex;
-	height: 100vh;
-}
-
