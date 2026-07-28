@@ -14,9 +14,7 @@ const descriptionInput = document.querySelector("#description");
 const dueDateInput = document.querySelector("#due-date");
 
 addTaskBtn.addEventListener("click", () => {
-	mainContainer.style.filter = "blur(5px)";
-	taskManager.style.display = "flex";
-	addTaskBtn.style.cursor = "default";
+	openTaskManager();
 });
 
 closeTaskManagerBtn.addEventListener("click", () => {
@@ -56,6 +54,13 @@ function clearInputs() {
 	titleInput.value = "";
 }
 
+function openTaskManager() {
+	confirmBtn.textContent = "Confirm";
+	mainContainer.style.filter = "blur(5px)";
+	taskManager.style.display = "flex";
+	addTaskBtn.style.cursor = "default";
+}
+
 function createTask(title, description, dueDate, priority) {
 	return {
 		title,
@@ -65,4 +70,12 @@ function createTask(title, description, dueDate, priority) {
 	};
 }
 
-export { taskManager, createTask };
+export {
+	createTask,
+	taskForm,
+	confirmBtn,
+	titleInput,
+	descriptionInput,
+	dueDateInput,
+	openTaskManager,
+};

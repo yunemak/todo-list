@@ -24,7 +24,7 @@ function renderTask(task, workspace) {
 	addCheckBox(divShort);
 
 	// Edit Button
-	addEditBtn(divShort);
+	addEditBtn(divShort, task);
 
 	// Title
 	let h3 = document.createElement("h3");

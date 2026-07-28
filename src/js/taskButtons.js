@@ -1,5 +1,13 @@
 import trashBinImg from "./../assets/trash-bin.png";
 import editImg from "./../assets/edit.png";
+import {
+	taskForm,
+	confirmBtn,
+	titleInput,
+	descriptionInput,
+	dueDateInput,
+	openTaskManager,
+} from "./taskManager.js";
 
 function addCheckBox(divShort) {
 	let checkbox = document.createElement("input");
@@ -11,10 +19,16 @@ function addCheckBox(divShort) {
 	divShort.appendChild(checkbox);
 }
 
-function addEditBtn(divShort) {
+function addEditBtn(divShort, task) {
 	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
 	editBtn.addEventListener("click", (e) => {
 		e.stopPropagation();
+		openTaskManager();
+		confirmBtn.textContent = "Edit";
+		titleInput.value = task.title;
+		descriptionInput.value = task.description;
+		dueDateInput.value = task.dueDate.split("-").reverse().join("-");
+		
 	});
 	divShort.appendChild(editBtn);
 }
