@@ -28,7 +28,6 @@ function addEditBtn(divShort, task) {
 		titleInput.value = task.title;
 		descriptionInput.value = task.description;
 		dueDateInput.value = task.dueDate.split("-").reverse().join("-");
-		
 	});
 	divShort.appendChild(editBtn);
 }
