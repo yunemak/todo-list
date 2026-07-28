@@ -38,8 +38,15 @@ function renderTask(task) {
 
 	selectedWorkspace.appendChild(div);
 
+	let taskControl = 0;
 	div.addEventListener("click", () => {
-		div.style.height = "200px";
+		if (taskControl === 0) {
+			div.style.height = "200px";
+			taskControl = 1;
+		} else {
+			div.style.height = "50px";
+			taskControl = 0;
+		}
 	});
 
 	// // Due Date

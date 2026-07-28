@@ -1,4 +1,5 @@
 .task {
+	height: 50px;
 	box-shadow: 5px 5px 20px var(--color-background-shadow);
 	border: 2px solid var(--color-font);
 	/* Layout inside */
@@ -30,8 +31,6 @@ button[type="checkbox"] {
 	width: 20px;
 	height: 20px;
 }
-
-
 
 .high-priority {
 	background-color: rgb(248, 107, 107);
