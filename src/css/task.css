@@ -1,9 +1,16 @@
-.task {
+.task-container {
 	height: 50px;
 	box-shadow: 5px 5px 20px var(--color-background-shadow);
 	border: 2px solid var(--color-font);
 	/* Layout inside */
 	display: flex;
+}
+
+.task {
+	flex: 1;
+	/* Layout inside */
+	display: flex;
+	flex-direction: column;
 }
 
 .priority {
@@ -14,13 +21,16 @@
 }
 
 .task-short {
-	flex: 1;
 	position: relative;
-	padding: 10px 10px;
+	padding: 10px;
 	/* Layout inside */
 	display: flex;
 	align-items: center;
 	gap: 10px;
+}
+
+.description {
+	padding: 10px;
 }
 
 .task:hover {

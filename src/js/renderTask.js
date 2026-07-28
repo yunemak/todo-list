@@ -3,13 +3,17 @@ import trashBinImg from "./../assets/trash-bin.png";
 import editImg from "./../assets/edit.png";
 
 function renderTask(task) {
-	let div = document.createElement("div");
-	div.classList.add("task");
+	let containerDiv = document.createElement("div");
+	containerDiv.classList.add("task-container");
 
 	let priority = document.createElement("p");
 	priority.classList.add("priority");
 	priority.classList.add(`${task.priority}-priority`);
-	div.appendChild(priority);
+	containerDiv.appendChild(priority);
+
+	let div = document.createElement("div");
+	div.classList.add("task");
+	containerDiv.appendChild(div);
 
 	let divShort = document.createElement("div");
 	divShort.classList.add("task-short");
@@ -32,32 +36,40 @@ function renderTask(task) {
 	h3.textContent = task.title;
 	divShort.appendChild(h3);
 
+	let dueDate = document.createElement("div");
+	dueDate.textContent = task.dueDate;
+	divShort.appendChild(dueDate);
+
 	// Delete Button
 	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
 	divShort.appendChild(deleteBtn);
 
-	selectedWorkspace.appendChild(div);
+	selectedWorkspace.appendChild(containerDiv);
 
 	let taskControl = 0;
 	div.addEventListener("click", () => {
 		if (taskControl === 0) {
-			div.style.height = "200px";
+			containerDiv.style.height = "200px";
+			renderDescription(div, task);
 			taskControl = 1;
 		} else {
-			div.style.height = "50px";
+			containerDiv.style.height = "50px";
+			destroyDescription(div);
 			taskControl = 0;
 		}
 	});
+}
 
-	// // Due Date
-	// let dueDate = document.createElement("div");
-	// dueDate.textContent = task.dueDate;
-	// div.appendChild(dueDate);
+function renderDescription(div, task) {
+	// Description
+	let description = document.createElement("p");
+	description.textContent = task.description;
+	description.classList.add("description");
+	div.appendChild(description);
+}
 
-	// // Description
-	// let description = document.createElement("p");
-	// description.textContent = task.description;
-	// div.appendChild(description);
+function destroyDescription(div) {
+	div.lastElementChild.remove();
 }
 
 function createButton(img, className) {
