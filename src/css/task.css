@@ -33,6 +33,12 @@
 	padding: 10px;
 }
 
+.due-date {
+	margin-left: 10px;
+	border-left: 2px solid var(--color-font);
+	padding-left: 10px;
+}
+
 .task:hover {
 	background-color: var(--color-font-hover);
 }

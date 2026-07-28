@@ -6,6 +6,7 @@ function renderTask(task) {
 	let containerDiv = document.createElement("div");
 	containerDiv.classList.add("task-container");
 
+	// Priority later may be changed to div's border color
 	let priority = document.createElement("p");
 	priority.classList.add("priority");
 	priority.classList.add(`${task.priority}-priority`);
@@ -19,16 +20,14 @@ function renderTask(task) {
 	divShort.classList.add("task-short");
 	div.appendChild(divShort);
 
-	// Priority
-
-	// Check
-	let checkbox = document.createElement("input");
-	checkbox.classList.add("checkbox-btn");
-	checkbox.type = "checkbox";
-	divShort.appendChild(checkbox);
+	// Check Box
+	addCheckBox(divShort);
 
 	// Edit Button
 	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
+	editBtn.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
 	divShort.appendChild(editBtn);
 
 	// Title
@@ -38,11 +37,11 @@ function renderTask(task) {
 
 	let dueDate = document.createElement("div");
 	dueDate.textContent = task.dueDate;
+	dueDate.classList.add("due-date");
 	divShort.appendChild(dueDate);
 
 	// Delete Button
-	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
-	divShort.appendChild(deleteBtn);
+	addDeleteBtn(divShort);
 
 	selectedWorkspace.appendChild(containerDiv);
 
@@ -58,6 +57,24 @@ function renderTask(task) {
 			taskControl = 0;
 		}
 	});
+}
+
+function addDeleteBtn(divShort) {
+	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
+	deleteBtn.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+	divShort.appendChild(deleteBtn);
+}
+
+function addCheckBox(divShort) {
+	let checkbox = document.createElement("input");
+	checkbox.classList.add("checkbox-btn");
+	checkbox.type = "checkbox";
+	checkbox.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+	divShort.appendChild(checkbox);
 }
 
 function renderDescription(div, task) {
