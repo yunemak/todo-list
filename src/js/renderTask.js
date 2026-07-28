@@ -12,6 +12,16 @@ function renderTask(task) {
 	priority.classList.add(`${task.priority}-priority`);
 	div.appendChild(priority);
 
+	// Check
+	let checkbox = document.createElement("input");
+	checkbox.classList.add("checkbox-btn");
+	checkbox.type = "checkbox";
+	div.appendChild(checkbox);
+
+	// Edit Button
+	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
+	div.appendChild(editBtn);
+
 	// Title
 	let h3 = document.createElement("h3");
 	h3.textContent = task.title;
@@ -27,26 +37,11 @@ function renderTask(task) {
 	// description.textContent = task.description;
 	// div.appendChild(description);
 
-	// Options
-	addTaskOptions(div);
+	// Delete Button
+	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
+	div.appendChild(deleteBtn);
 
 	selectedWorkspace.appendChild(div);
-}
-
-function addTaskOptions(div) {
-	let taskOptions = document.createElement("div");
-	taskOptions.classList.add("task-options");
-	div.appendChild(taskOptions);
-
-	let checkbox = document.createElement("input");
-	checkbox.classList.add("checkbox-btn");
-	checkbox.type = "checkbox";
-	taskOptions.appendChild(checkbox);
-
-	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
-	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
-	taskOptions.appendChild(editBtn);
-	taskOptions.appendChild(deleteBtn);
 }
 
 function createButton(img, className) {
