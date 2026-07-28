@@ -6,26 +6,40 @@ function renderTask(task) {
 	let div = document.createElement("div");
 	div.classList.add("task");
 
+	let divShort = document.createElement("div");
+	divShort.classList.add("task-short");
+	div.appendChild(divShort);
+
 	// Priority
 	let priority = document.createElement("p");
 	priority.classList.add("priority");
 	priority.classList.add(`${task.priority}-priority`);
-	div.appendChild(priority);
+	divShort.appendChild(priority);
 
 	// Check
 	let checkbox = document.createElement("input");
 	checkbox.classList.add("checkbox-btn");
 	checkbox.type = "checkbox";
-	div.appendChild(checkbox);
+	divShort.appendChild(checkbox);
 
 	// Edit Button
 	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
-	div.appendChild(editBtn);
+	divShort.appendChild(editBtn);
 
 	// Title
 	let h3 = document.createElement("h3");
 	h3.textContent = task.title;
-	div.appendChild(h3);
+	divShort.appendChild(h3);
+
+	// Delete Button
+	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
+	divShort.appendChild(deleteBtn);
+
+	selectedWorkspace.appendChild(div);
+
+	div.addEventListener("click", () => {
+		div.style.height = "200px";
+	});
 
 	// // Due Date
 	// let dueDate = document.createElement("div");
@@ -36,12 +50,6 @@ function renderTask(task) {
 	// let description = document.createElement("p");
 	// description.textContent = task.description;
 	// div.appendChild(description);
-
-	// Delete Button
-	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
-	div.appendChild(deleteBtn);
-
-	selectedWorkspace.appendChild(div);
 }
 
 function createButton(img, className) {
