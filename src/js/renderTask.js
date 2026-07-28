@@ -6,15 +6,16 @@ function renderTask(task) {
 	let div = document.createElement("div");
 	div.classList.add("task");
 
+	let priority = document.createElement("p");
+	priority.classList.add("priority");
+	priority.classList.add(`${task.priority}-priority`);
+	div.appendChild(priority);
+
 	let divShort = document.createElement("div");
 	divShort.classList.add("task-short");
 	div.appendChild(divShort);
 
 	// Priority
-	let priority = document.createElement("p");
-	priority.classList.add("priority");
-	priority.classList.add(`${task.priority}-priority`);
-	divShort.appendChild(priority);
 
 	// Check
 	let checkbox = document.createElement("input");

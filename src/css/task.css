@@ -1,10 +1,15 @@
 .task {
 	box-shadow: 5px 5px 20px var(--color-background-shadow);
 	border: 2px solid var(--color-font);
-	padding: 10px 10px;
 	/* Layout inside */
 	display: flex;
-	gap: 10px;
+}
+
+.priority {
+	width: 30px;
+	text-align: center;
+	font-weight: bold;
+	color: rgb(82, 26, 16);
 }
 
 .task-short {
@@ -13,6 +18,7 @@
 	padding: 10px 10px;
 	/* Layout inside */
 	display: flex;
+	align-items: center;
 	gap: 10px;
 }
 
@@ -25,13 +31,7 @@ button[type="checkbox"] {
 	height: 20px;
 }
 
-.priority {
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	font-weight: bold;
-	color: rgb(82, 26, 16);
-}
+
 
 .high-priority {
 	background-color: rgb(248, 107, 107);
