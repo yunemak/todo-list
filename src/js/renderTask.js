@@ -1,4 +1,4 @@
-import { selectedWorkspace, workspacesDiv, workspaces } from "./global.js";
+import { selectedWorkspaceDiv, workspacesDiv, workspaces } from "./global.js";
 import { renderWorkspace } from "./renderWorkspace.js";
 import { addDeleteBtn, addEditBtn, addCheckBox } from "./taskButtons.js";
 
@@ -39,7 +39,7 @@ function renderTask(task, workspace) {
 	// Delete Button
 	addDeleteBtn(divShort, task, workspace, containerDiv);
 
-	selectedWorkspace.appendChild(containerDiv);
+	selectedWorkspaceDiv.appendChild(containerDiv);
 
 	let taskControl = 0;
 	div.addEventListener("click", () => {

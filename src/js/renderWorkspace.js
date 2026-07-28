@@ -1,5 +1,5 @@
 import {
-	selectedWorkspace,
+	selectedWorkspaceDiv,
 	workspacesDiv,
 	workspaces,
 	workspaceDivs,
@@ -7,7 +7,7 @@ import {
 import { renderTask } from "./renderTask.js";
 
 function renderWorkspaces() {
-	selectedWorkspace.replaceChildren();
+	selectedWorkspaceDiv.replaceChildren();
 	workspacesDiv.replaceChildren();
 	workspaces.forEach((workspace) => {
 		let div = document.createElement("div");

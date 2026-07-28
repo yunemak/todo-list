@@ -1,4 +1,4 @@
-import { mainContainer, selectedWorkspace, workspaces } from "./global.js";
+import { mainContainer, workspaces } from "./global.js";
 
 import { renderTask } from "./renderTask.js";
 
@@ -32,8 +32,10 @@ taskForm.addEventListener("submit", (e) => {
 		dueDateInput.value,
 		priorityInput.value,
 	);
+	let selectedWorkspace;
 	for (let workspace of workspaces) {
 		if (workspace.isSelected) {
+			selectedWorkspace = workspace;
 			workspace.taskList.push(task);
 			break;
 		}
