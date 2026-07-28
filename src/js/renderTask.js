@@ -2,8 +2,6 @@ import { selectedWorkspace, workspacesDiv, workspaces } from "./global.js";
 import trashBinImg from "./../assets/trash-bin.png";
 import editImg from "./../assets/edit.png";
 
-
-
 function renderTask(task) {
 	let div = document.createElement("div");
 	div.classList.add("task");
@@ -19,15 +17,15 @@ function renderTask(task) {
 	h3.textContent = task.title;
 	div.appendChild(h3);
 
-	// Due Date
-	let dueDate = document.createElement("div");
-	dueDate.textContent = task.dueDate;
-	div.appendChild(dueDate);
+	// // Due Date
+	// let dueDate = document.createElement("div");
+	// dueDate.textContent = task.dueDate;
+	// div.appendChild(dueDate);
 
-	// Description
-	let description = document.createElement("p");
-	description.textContent = task.description;
-	div.appendChild(description);
+	// // Description
+	// let description = document.createElement("p");
+	// description.textContent = task.description;
+	// div.appendChild(description);
 
 	// Options
 	addTaskOptions(div);
