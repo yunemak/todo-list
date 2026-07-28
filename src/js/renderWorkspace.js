@@ -1,4 +1,9 @@
-import { selectedWorkspace, workspacesDiv, workspaces } from "./global.js";
+import {
+	selectedWorkspace,
+	workspacesDiv,
+	workspaces,
+	workspaceDivs,
+} from "./global.js";
 import { renderTask } from "./renderTask.js";
 
 function renderWorkspaces() {
@@ -13,6 +18,13 @@ function renderWorkspaces() {
 				renderTask(task);
 			}
 		}
+		div.addEventListener("click", () => {
+			workspaces.forEach((workspace) => {
+				workspace.isSelected = false;
+			});
+			workspace.isSelected = true;
+			renderWorkspaces();
+		});
 		workspacesDiv.appendChild(div);
 	});
 }

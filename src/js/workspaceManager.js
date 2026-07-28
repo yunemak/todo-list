@@ -5,6 +5,8 @@ import {
 	workspaces,
 } from "./global.js";
 import { createTask } from "./taskManager.js";
+import { renderWorkspaces } from "./renderWorkspace.js";
+
 
 const workspaceManager = document.getElementById("workspace-manager");
 const addWorkspaceBtn = document.getElementById("add-workspace-btn");
