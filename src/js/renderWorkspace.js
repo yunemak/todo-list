@@ -15,7 +15,7 @@ function renderWorkspaces() {
 		div.textContent = workspace.name;
 		if (workspace.isSelected) {
 			for (let task of workspace.taskList) {
-				renderTask(task);
+				renderTask(task, workspace);
 			}
 		}
 		div.addEventListener("click", () => {

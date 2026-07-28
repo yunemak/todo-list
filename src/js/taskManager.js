@@ -40,7 +40,7 @@ taskForm.addEventListener("submit", (e) => {
 			break;
 		}
 	}
-	renderTask(task);
+	renderTask(task, selectedWorkspace);
 	closeTaskManager();
 	clearInputs();
 });

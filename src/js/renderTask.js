@@ -1,8 +1,8 @@
 import { selectedWorkspace, workspacesDiv, workspaces } from "./global.js";
-import trashBinImg from "./../assets/trash-bin.png";
-import editImg from "./../assets/edit.png";
+import { renderWorkspace } from "./renderWorkspace.js";
+import { addDeleteBtn, addEditBtn, addCheckBox } from "./taskButtons.js";
 
-function renderTask(task) {
+function renderTask(task, workspace) {
 	let containerDiv = document.createElement("div");
 	containerDiv.classList.add("task-container");
 
@@ -24,11 +24,7 @@ function renderTask(task) {
 	addCheckBox(divShort);
 
 	// Edit Button
-	let editBtn = createButton(createImg(editImg, "icon"), "edit-btn");
-	editBtn.addEventListener("click", (e) => {
-		e.stopPropagation();
-	});
-	divShort.appendChild(editBtn);
+	addEditBtn(divShort);
 
 	// Title
 	let h3 = document.createElement("h3");
@@ -41,7 +37,7 @@ function renderTask(task) {
 	divShort.appendChild(dueDate);
 
 	// Delete Button
-	addDeleteBtn(divShort);
+	addDeleteBtn(divShort, task, workspace, containerDiv);
 
 	selectedWorkspace.appendChild(containerDiv);
 
@@ -59,24 +55,6 @@ function renderTask(task) {
 	});
 }
 
-function addDeleteBtn(divShort) {
-	let deleteBtn = createButton(createImg(trashBinImg, "icon"), "delete-btn");
-	deleteBtn.addEventListener("click", (e) => {
-		e.stopPropagation();
-	});
-	divShort.appendChild(deleteBtn);
-}
-
-function addCheckBox(divShort) {
-	let checkbox = document.createElement("input");
-	checkbox.classList.add("checkbox-btn");
-	checkbox.type = "checkbox";
-	checkbox.addEventListener("click", (e) => {
-		e.stopPropagation();
-	});
-	divShort.appendChild(checkbox);
-}
-
 function renderDescription(div, task) {
 	// Description
 	let description = document.createElement("p");
@@ -87,21 +65,6 @@ function renderDescription(div, task) {
 
 function destroyDescription(div) {
 	div.lastElementChild.remove();
-}
-
-function createButton(img, className) {
-	let button = document.createElement("button");
-	button.type = "button";
-	button.classList.add(className);
-	button.appendChild(img);
-	return button;
-}
-
-function createImg(src, className) {
-	let img = document.createElement("img");
-	img.src = src;
-	img.classList.add(className);
-	return img;
 }
 
 export { renderTask };
