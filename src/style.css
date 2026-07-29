@@ -15,6 +15,12 @@ html {
 
 body {
 	background-color: var(--color-background);
+	background-image: radial-gradient(
+		circle,
+		rgba(1, 1, 1, 0.2) 1px,
+		transparent 1px
+	);
+	background-size: 15px 15px;
 }
 
 #main-container {
@@ -25,12 +31,18 @@ body {
 }
 
 nav {
+	padding: 20px;
 	background-color: var(--color-menu);
 	grid-column: 1 / -1;
 	box-shadow: 5px 5px 20px var(--color-shadow);
 }
 
 #side-bar {
+	padding: 20px;
 	background-color: var(--color-main);
 	box-shadow: 5px 5px 20px var(--color-shadow);
+}
+
+#project {
+	padding: 40px;
 }
