@@ -1,10 +1,12 @@
 @import url("./css/reset.css");
 
 :root {
-	--color-background: #f0f0f0; /* shadow grey */
-	--color-font: #171717; /* porcelain */
+	--color-background: #f0f0f0;
+	--color-font: #171717;
 	/* --color-hover: #29242b; */
 	--color-main: white;
+	--color-menu: #00bfff; /* deep sky */
+	--color-shadow: rgb(206, 206, 206);
 }
 
 html {
@@ -23,11 +25,12 @@ body {
 }
 
 nav {
-	background-color: var(--color-main);
+	background-color: var(--color-menu);
 	grid-column: 1 / -1;
-	border-bottom: 2px solid var(--color-font);
+	box-shadow: 5px 5px 20px var(--color-shadow);
 }
 
 #side-bar {
 	background-color: var(--color-main);
+	box-shadow: 5px 5px 20px var(--color-shadow);
 }
