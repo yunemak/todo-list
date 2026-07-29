@@ -1,12 +1,33 @@
 @import url("./css/reset.css");
 
 :root {
-	--color-background: #342E37; /* shadow grey */
-	--color-font: #FAFFFD; /* porcelain */
-	--color-font-hover: #29242b;
-	--color-background-shadow: #57495b;
+	--color-background: #f0f0f0; /* shadow grey */
+	--color-font: #171717; /* porcelain */
+	/* --color-hover: #29242b; */
+	--color-main: white;
 }
 
 html {
 	font-family: "Open Sans", sans-serif;
+}
+
+body {
+	background-color: var(--color-background);
+}
+
+#main-container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	grid-template-rows: 100px 1fr;
+}
+
+nav {
+	background-color: var(--color-main);
+	grid-column: 1 / -1;
+	border-bottom: 2px solid var(--color-font);
+}
+
+#side-bar {
+	background-color: var(--color-main);
 }
