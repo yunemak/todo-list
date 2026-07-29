@@ -1,5 +1,6 @@
 function createTask(title, description, dueDate, priority) {
-	return { title, description, dueDate, priority };
+	let id = crypto.randomUUID();
+	return { title, description, dueDate, priority, id };
 }
 /* 
 Priority

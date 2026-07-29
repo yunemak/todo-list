@@ -1,5 +1,5 @@
 function createProject(name) {
-	let taskList = {};
+	let taskList = [];
 	return { name, taskList };
 }
 
