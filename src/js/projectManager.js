@@ -4,7 +4,7 @@ import closeImage from "../assets/close.png";
 const addTaskButton = document.getElementById("add-task-button");
 const addProjectButton = document.getElementById("add-project-button");
 
-addProjectButton.addEventListener("click", (e) => {
+addProjectButton.addEventListener("click", () => {
 	setBackgroundDisabled(true);
 	createProjectManager();
 });
@@ -15,6 +15,17 @@ function createProjectManager() {
 	body.appendChild(projectManager);
 
 	projectManager.appendChild(createCloseButton(projectManager));
+	// projectManager.appendChild(createTitleInput());
+	projectManager.appendChild(confirmProjectButton(projectManager));
+}
+
+function createTitleInput() {}
+
+function confirmProjectButton(projectManager) {
+	const confirmButton = document.createElement("button");
+	confirmButton.classList.add("confirm-button");
+	confirmButton.textContent = "Confirm";
+	return confirmButton;
 }
 
 function setBackgroundDisabled(isDisabled) {
@@ -39,9 +50,9 @@ function updateButtonState(button, isDisabled) {
 }
 
 function createCloseButton(projectManager) {
-	let closeButton = document.createElement("button");
+	const closeButton = document.createElement("button");
 	closeButton.classList.add("close-button");
-	let closeButtonImage = document.createElement("img");
+	const closeButtonImage = document.createElement("img");
 	closeButtonImage.classList.add("icon");
 	closeButtonImage.src = closeImage;
 	closeButton.appendChild(closeButtonImage);
