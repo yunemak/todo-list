@@ -15,11 +15,24 @@ function createProjectManager() {
 	body.appendChild(projectManager);
 
 	projectManager.appendChild(createCloseButton(projectManager));
-	// projectManager.appendChild(createTitleInput());
+	projectManager.appendChild(createTitleInput());
 	projectManager.appendChild(confirmProjectButton(projectManager));
 }
 
-function createTitleInput() {}
+function createTitleInput() {
+	const inputContainer = document.createElement("div");
+	inputContainer.classList.add("input-container");
+
+	const titleLabel = document.createElement("label");
+	titleLabel.classList.add("title-label");
+	inputContainer.appendChild(titleLabel);
+
+	const titleInput = document.createElement("input");
+	titleInput.classList.add("title-input");
+	inputContainer.appendChild(titleInput);
+
+	return inputContainer;
+}
 
 function confirmProjectButton(projectManager) {
 	const confirmButton = document.createElement("button");
