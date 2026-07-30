@@ -1,6 +1,6 @@
 .project-manager {
 	width: 500px;
-	height: 500px;
+	height: 200px;
 	background-color: var(--color-main);
 	box-shadow: 1px 1px 30px var(--color-shadow);
 	border-radius: 10px;
@@ -16,6 +16,9 @@
 }
 
 .input-container {
+	position: relative;
+	bottom: 20px;
+	/* Layour inside */
 	display: grid;
 	grid-template-columns: 50px 1fr;
 	justify-content: center;
