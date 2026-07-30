@@ -10,11 +10,11 @@ addProjectButton.addEventListener("click", (e) => {
 });
 
 function createProjectManager() {
-	let manager = document.createElement("div");
-	manager.classList.add("project-manager");
-	body.appendChild(manager);
+	const projectManager = document.createElement("div");
+	projectManager.classList.add("project-manager");
+	body.appendChild(projectManager);
 
-	manager.appendChild(createCloseButton(manager));
+	projectManager.appendChild(createCloseButton(projectManager));
 }
 
 function setBackgroundDisabled(bool) {
@@ -41,7 +41,7 @@ function setBackgroundDisabled(bool) {
 	}
 }
 
-function createCloseButton(manager) {
+function createCloseButton(projectManager) {
 	let closeButton = document.createElement("button");
 	closeButton.classList.add("close-button");
 	let closeButtonImage = document.createElement("img");
@@ -51,7 +51,7 @@ function createCloseButton(manager) {
 
 	// Function
 	closeButton.addEventListener("click", () => {
-		manager.remove();
+		projectManager.remove();
 		setBackgroundDisabled(false);
 	});
 	return closeButton;
