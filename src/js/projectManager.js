@@ -1,4 +1,5 @@
 import { mainContainer, body } from "./global.js";
+import closeImage from "../assets/close.png";
 
 const addTaskButton = document.getElementById("add-task-button");
 const addProjectButton = document.getElementById("add-project-button");
@@ -12,6 +13,15 @@ function createProjectManager() {
 	let manager = document.createElement("div");
 	manager.classList.add("project-manager");
 	body.appendChild(manager);
+
+	// Close Button
+	let closeButton = document.createElement("button");
+	closeButton.classList.add("close-button");
+	let closeButtonImage = document.createElement("img");
+	closeButtonImage.classList.add("icon");
+	closeButtonImage.src = closeImage;
+	closeButton.appendChild(closeButtonImage);
+	manager.appendChild(closeButton);
 }
 
 function disableBackground() {
