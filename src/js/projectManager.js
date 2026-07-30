@@ -15,12 +15,19 @@ function createProjectManager() {
 	body.appendChild(projectManager);
 
 	projectManager.appendChild(createCloseButton(projectManager));
-	projectManager.appendChild(createTitleInput());
-	projectManager.appendChild(confirmProjectButton(projectManager));
+
+	projectManager.appendChild(createFormElement(projectManager));
+}
+
+function createFormElement(projectManager) {
+	const formElement = document.createElement("form");
+	formElement.appendChild(createTitleInput());
+	formElement.appendChild(createConfirmProjectButton(projectManager));
+	return formElement;
 }
 
 function createTitleInput() {
-	const inputContainer = document.createElement("form");
+	const inputContainer = document.createElement("div");
 	inputContainer.classList.add("input-container");
 
 	const titleLabel = document.createElement("label");
@@ -37,7 +44,7 @@ function createTitleInput() {
 	return inputContainer;
 }
 
-function confirmProjectButton(projectManager) {
+function createConfirmProjectButton(projectManager) {
 	const confirmButton = document.createElement("button");
 	confirmButton.classList.add("confirm-button");
 	confirmButton.textContent = "Confirm";
