@@ -23,21 +23,18 @@ function setBackgroundDisabled(isDisabled) {
 	} else {
 		mainContainer.classList.remove("blurred");
 	}
-	addProjectButton.disabled = isDisabled; // later enable
+	updateButtonState(addProjectButton, isDisabled);
+	updateButtonState(addTaskButton, isDisabled);
+}
+
+function updateButtonState(button, isDisabled) {
+	button.disabled = isDisabled;
 	if (isDisabled) {
-		addProjectButton.classList.remove("button");
-		addProjectButton.classList.add("button-disabled");
+		button.classList.add("button-disabled");
+		button.classList.remove("button");
 	} else {
-		addProjectButton.classList.remove("button-disabled");
-		addProjectButton.classList.add("button");
-	}
-	addTaskButton.disabled = isDisabled; // later enable
-	if (isDisabled) {
-		addTaskButton.classList.remove("button");
-		addTaskButton.classList.add("button-disabled");
-	} else {
-		addTaskButton.classList.remove("button-disabled");
-		addTaskButton.classList.add("button");
+		button.classList.add("button");
+		button.classList.remove("button-disabled");
 	}
 }
 
