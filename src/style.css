@@ -15,7 +15,7 @@ html {
 	font-family: "Open Sans", sans-serif;
 }
 
-body {
+#main-container {
 	background-color: var(--color-background);
 	background-image: radial-gradient(
 		circle,
@@ -23,9 +23,6 @@ body {
 		transparent 1px
 	);
 	background-size: 15px 15px;
-}
-
-#main-container {
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 300px 1fr;
