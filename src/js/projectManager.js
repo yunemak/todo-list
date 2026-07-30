@@ -14,14 +14,7 @@ function createProjectManager() {
 	manager.classList.add("project-manager");
 	body.appendChild(manager);
 
-	// Close Button
-	let closeButton = document.createElement("button");
-	closeButton.classList.add("close-button");
-	let closeButtonImage = document.createElement("img");
-	closeButtonImage.classList.add("icon");
-	closeButtonImage.src = closeImage;
-	closeButton.appendChild(closeButtonImage);
-	manager.appendChild(closeButton);
+	manager.appendChild(createCloseButton());
 }
 
 function disableBackground() {
@@ -36,4 +29,14 @@ function disableButtons() {
 	addTaskButton.disabled = true; // later enable
 	addTaskButton.classList.remove("button");
 	addTaskButton.classList.add("button-disabled");
+}
+
+function createCloseButton() {
+	let closeButton = document.createElement("button");
+	closeButton.classList.add("close-button");
+	let closeButtonImage = document.createElement("img");
+	closeButtonImage.classList.add("icon");
+	closeButtonImage.src = closeImage;
+	closeButton.appendChild(closeButtonImage);
+	return closeButton;
 }
