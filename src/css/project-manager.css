@@ -32,6 +32,10 @@
 	border: 2px solid red;
 }
 
+.title-input:user-valid {
+	border: 2px solid var(--color-confirm);
+}
+
 .close-button {
 	/* Style */
 	background-color: var(--color-main);
@@ -53,7 +57,7 @@
 .confirm-button {
 	/* Style */
 	color: var(--color-font);
-	background-color: #5bdd5b;
+	background-color: var(--color-confirm);
 	font-weight: var(--font-weight);
 	border: none;
 	padding: 5px 10px;

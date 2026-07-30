@@ -10,6 +10,7 @@
 	--color-main: white;
 	--color-menu: #00bfff; /* deep sky */
 	--color-shadow: rgb(206, 206, 206);
+	--color-confirm: #5bdd5b;
 	/* Integers */
 	--font-weight: 500;
 }

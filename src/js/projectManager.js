@@ -23,6 +23,12 @@ function createFormElement(projectManager) {
 	const formElement = document.createElement("form");
 	formElement.appendChild(createTitleInput());
 	formElement.appendChild(createConfirmProjectButton(projectManager));
+
+	formElement.addEventListener("submit", (e) => {
+		e.preventDefault();
+		console.log("deneme");
+	});
+
 	return formElement;
 }
 
@@ -40,6 +46,7 @@ function createTitleInput() {
 	titleInput.classList.add("title-input");
 	titleInput.setAttribute("id", "title-input");
 	titleInput.setAttribute("minlength", "1");
+	titleInput.setAttribute("required", "");
 
 	return inputContainer;
 }
