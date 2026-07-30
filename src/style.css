@@ -1,5 +1,6 @@
 @import url("./css/reset.css");
 @import url("./css/project.css");
+@import url("./css/menu.css");
 
 :root {
 	--color-background: #f0f0f0;
@@ -31,11 +32,15 @@ body {
 	grid-template-rows: 100px 1fr;
 }
 
-nav {
+#menu {
 	padding: 20px;
 	background-color: var(--color-menu);
 	grid-column: 1 / -1;
 	box-shadow: 5px 5px 20px var(--color-shadow);
+	/* Layout inside */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #side-bar {
