@@ -1,11 +1,22 @@
 .button {
 	background-color: var(--color-main);
 	padding: 10px;
-	border: 1px solid black;
+	border: 1px solid var(--color-font);
+	color: var(--color-font);
 	border-radius: 10px;
+	font-weight: var(--font-weight);
+	cursor: pointer;
 }
 
 .button:hover {
-	cursor: pointer;
 	background-color: var(--color-background);
+}
+
+.button-disabled {
+	background-color: var(--color-main);
+	padding: 10px;
+	border: 1px solid var(--color-font);
+	color: var(--color-font);
+	border-radius: 10px;
+	font-weight: var(--font-weight);
 }

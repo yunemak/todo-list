@@ -16,4 +16,10 @@ function createProjectManager() {
 
 function disableBackground() {
 	mainContainer.style.filter = "blur(5px)";
+	addProjectButton.disabled = true; // later enable
+	addProjectButton.classList.remove("button");
+	addProjectButton.classList.add("button-disabled");
+	addTaskButton.disabled = true; // later enable
+	addTaskButton.classList.remove("button");
+	addTaskButton.classList.add("button-disabled");
 }

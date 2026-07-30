@@ -4,12 +4,14 @@
 @import url("./css/project-manager.css");
 
 :root {
+	/* Colors */
 	--color-background: #f0f0f0;
 	--color-font: #171717;
-	/* --color-hover: #29242b; */
 	--color-main: white;
 	--color-menu: #00bfff; /* deep sky */
 	--color-shadow: rgb(206, 206, 206);
+	/* Integers */
+	--font-weight: 500;
 }
 
 html {
