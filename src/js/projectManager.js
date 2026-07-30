@@ -17,22 +17,22 @@ function createProjectManager() {
 	projectManager.appendChild(createCloseButton(projectManager));
 }
 
-function setBackgroundDisabled(bool) {
-	if (bool) {
-		mainContainer.style.filter = "blur(5px)";
+function setBackgroundDisabled(isDisabled) {
+	if (isDisabled) {
+		mainContainer.classList.add("blurred");
 	} else {
-		mainContainer.style.filter = "none";
+		mainContainer.classList.remove("blurred");
 	}
-	addProjectButton.disabled = bool; // later enable
-	if (bool) {
+	addProjectButton.disabled = isDisabled; // later enable
+	if (isDisabled) {
 		addProjectButton.classList.remove("button");
 		addProjectButton.classList.add("button-disabled");
 	} else {
 		addProjectButton.classList.remove("button-disabled");
 		addProjectButton.classList.add("button");
 	}
-	addTaskButton.disabled = bool; // later enable
-	if (bool) {
+	addTaskButton.disabled = isDisabled; // later enable
+	if (isDisabled) {
 		addTaskButton.classList.remove("button");
 		addTaskButton.classList.add("button-disabled");
 	} else {
