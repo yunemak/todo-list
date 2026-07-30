@@ -10,6 +10,10 @@ function createProject(name) {
 	return project;
 }
 
+/*
+	Newly created project is automatically added to global projects
+*/
+
 function getProjects() {
 	return [...projects];
 }

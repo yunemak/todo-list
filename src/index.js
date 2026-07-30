@@ -7,5 +7,7 @@ let myProject = createProject("My Project");
 console.log(myProject);
 myProject.taskList.push(createTask("task1"));
 console.log(myProject);
+createProject("asd");
+createProject("deneme");
 
 renderProjects();
