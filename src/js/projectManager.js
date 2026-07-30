@@ -20,16 +20,19 @@ function createProjectManager() {
 }
 
 function createTitleInput() {
-	const inputContainer = document.createElement("div");
+	const inputContainer = document.createElement("form");
 	inputContainer.classList.add("input-container");
 
 	const titleLabel = document.createElement("label");
 	inputContainer.appendChild(titleLabel);
 	titleLabel.textContent = "Title:";
+	titleLabel.setAttribute("for", "title-input");
 
 	const titleInput = document.createElement("input");
 	inputContainer.appendChild(titleInput);
 	titleInput.classList.add("title-input");
+	titleInput.setAttribute("id", "title-input");
+	titleInput.setAttribute("minlength", "1");
 
 	return inputContainer;
 }

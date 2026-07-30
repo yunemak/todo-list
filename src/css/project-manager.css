@@ -28,6 +28,10 @@
 	border: 2px solid var(--color-font);
 }
 
+.title-input:user-invalid {
+	border: 2px solid red;
+}
+
 .close-button {
 	/* Style */
 	background-color: var(--color-main);
