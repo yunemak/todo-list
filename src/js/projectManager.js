@@ -5,7 +5,7 @@ const addTaskButton = document.getElementById("add-task-button");
 const addProjectButton = document.getElementById("add-project-button");
 
 addProjectButton.addEventListener("click", (e) => {
-	disableBackground();
+	setBackgroundDisabled(true);
 	createProjectManager();
 });
 
@@ -17,18 +17,28 @@ function createProjectManager() {
 	manager.appendChild(createCloseButton(manager));
 }
 
-function disableBackground() {
-	mainContainer.style.filter = "blur(5px)";
-	disableButtons();
-}
-
-function disableButtons() {
-	addProjectButton.disabled = true; // later enable
-	addProjectButton.classList.remove("button");
-	addProjectButton.classList.add("button-disabled");
-	addTaskButton.disabled = true; // later enable
-	addTaskButton.classList.remove("button");
-	addTaskButton.classList.add("button-disabled");
+function setBackgroundDisabled(bool) {
+	if (bool) {
+		mainContainer.style.filter = "blur(5px)";
+	} else {
+		mainContainer.style.filter = "none";
+	}
+	addProjectButton.disabled = bool; // later enable
+	if (bool) {
+		addProjectButton.classList.remove("button");
+		addProjectButton.classList.add("button-disabled");
+	} else {
+		addProjectButton.classList.remove("button-disabled");
+		addProjectButton.classList.add("button");
+	}
+	addTaskButton.disabled = bool; // later enable
+	if (bool) {
+		addTaskButton.classList.remove("button");
+		addTaskButton.classList.add("button-disabled");
+	} else {
+		addTaskButton.classList.remove("button-disabled");
+		addTaskButton.classList.add("button");
+	}
 }
 
 function createCloseButton(manager) {
@@ -41,26 +51,8 @@ function createCloseButton(manager) {
 
 	// Function
 	closeButton.addEventListener("click", () => {
-		destroyProjectManager(manager);
-		enableBackground();
+		manager.remove();
+		setBackgroundDisabled(false);
 	});
 	return closeButton;
-}
-
-function destroyProjectManager(manager) {
-	manager.remove();
-}
-
-function enableBackground() {
-	mainContainer.style.filter = "none";
-	enableButtons();
-}
-
-function enableButtons() {
-	addProjectButton.disabled = false; // later enable
-	addProjectButton.classList.remove("button-disabled");
-	addProjectButton.classList.add("button");
-	addTaskButton.disabled = false; // later enable
-	addTaskButton.classList.remove("button-disabled");
-	addTaskButton.classList.add("button");
 }
