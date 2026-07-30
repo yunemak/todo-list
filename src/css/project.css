@@ -1,5 +1,6 @@
 .project {
 	padding: 10px 20px;
+	width: 80%;
 	border: 2px solid var(--color-font);
 	border-radius: 5px;
 }
