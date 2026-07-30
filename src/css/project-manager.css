@@ -15,6 +15,19 @@
 	justify-content: center;
 }
 
+.input-container {
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.title-input {
+	padding: 5px;
+	border: 2px solid var(--color-font);
+}
+
 .close-button {
 	/* Style */
 	background-color: var(--color-main);

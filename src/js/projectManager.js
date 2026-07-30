@@ -24,12 +24,12 @@ function createTitleInput() {
 	inputContainer.classList.add("input-container");
 
 	const titleLabel = document.createElement("label");
-	titleLabel.classList.add("title-label");
 	inputContainer.appendChild(titleLabel);
+	titleLabel.textContent = "Title:";
 
 	const titleInput = document.createElement("input");
-	titleInput.classList.add("title-input");
 	inputContainer.appendChild(titleInput);
+	titleInput.classList.add("title-input");
 
 	return inputContainer;
 }
