@@ -1,4 +1,4 @@
-import { mainContainer } from "./global.js";
+import { mainContainer, body } from "./global.js";
 
 const addTaskButton = document.getElementById("add-task-button");
 const addProjectButton = document.getElementById("add-project-button");
@@ -9,7 +9,9 @@ addProjectButton.addEventListener("click", (e) => {
 });
 
 function createProjectManager() {
-	console.log("project manager is created");
+	let manager = document.createElement("div");
+	manager.classList.add("project-manager");
+	body.appendChild(manager);
 }
 
 function disableBackground() {

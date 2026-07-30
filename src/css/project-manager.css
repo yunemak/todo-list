@@ -1,0 +1,13 @@
+.project-manager {
+	width: 500px;
+	height: 500px;
+	background-color: var(--color-main);
+	box-shadow: 1px 1px 30px var(--color-shadow);
+	border-radius: 10px;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	/* Layout inside */
+	display: flex;
+}
