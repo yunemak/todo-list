@@ -10,15 +10,16 @@ import { getProjects } from "./projectUtils.js";
 function renderProjects() {
 	sideBar.replaceChildren();
 	getProjects().forEach((project) => {
-		sideBar.appendChild(createProjectElement(project.name));
+		sideBar.appendChild(createProjectElement(project));
 	});
 	return 0;
 }
 
-function createProjectElement(name) {
+function createProjectElement(project) {
 	let div = document.createElement("div");
+	div.dataset.projectId = project.id;
 	div.classList.add("project");
-	div.textContent = name;
+	div.textContent = project.name;
 	return div;
 }
 
