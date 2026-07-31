@@ -5,7 +5,6 @@ function renderTasks(tasks) {
 	const container = document.createElement("div");
 	container.id = "current-container";
 
-	console.log(tasks);
 	tasks.forEach((task) => {
 		const div = document.createElement("div");
 		container.appendChild(div);
