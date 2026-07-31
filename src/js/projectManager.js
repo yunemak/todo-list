@@ -28,7 +28,10 @@ function createFormElement(projectManager) {
 
 	formElement.addEventListener("submit", (e) => {
 		e.preventDefault();
-		console.log("deneme");
+		const titleInput = document.getElementById("title-input");
+		createProject(titleInput.value);
+		renderProjects();
+		closeProjectManager(projectManager);
 	});
 
 	return formElement;
@@ -57,12 +60,6 @@ function createConfirmProjectButton(projectManager) {
 	const confirmButton = document.createElement("button");
 	confirmButton.classList.add("confirm-button");
 	confirmButton.textContent = "Confirm";
-	confirmButton.addEventListener("click", () => {
-		const titleInput = document.getElementById("title-input");
-		createProject(titleInput.value);
-		renderProjects();
-		closeProjectManager(projectManager);
-	});
 	return confirmButton;
 }
 
