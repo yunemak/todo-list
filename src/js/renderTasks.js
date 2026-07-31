@@ -11,10 +11,31 @@ function renderTasks(project) {
 }
 
 function createTaskElement(task) {
-	const div = document.createElement("div");
-	div.classList.add("task");
-	div.textContent = task.title;
-	return div;
+	const taskElement = document.createElement("div");
+	taskElement.classList.add("task");
+
+	const taskShortElement = document.createElement("div");
+	taskShortElement.classList.add("task-short");
+
+	taskShortElement.appendChild(createCheckBox(task));
+	taskShortElement.appendChild(createTitleElement(task));
+
+	taskElement.appendChild(taskShortElement);
+	return taskElement;
+}
+
+function createCheckBox(task) {
+	const checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	checkbox.classList.add("checkbox");
+	return checkbox;
+}
+
+function createTitleElement(task) {
+	const titleElement = document.createElement("h3");
+	titleElement.classList.add("title");
+	titleElement.textContent = task.title;
+	return titleElement;
 }
 
 export { renderTasks };
