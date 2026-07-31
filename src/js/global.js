@@ -1,6 +1,6 @@
 const sideBar = document.getElementById("side-bar");
 const mainContainer = document.getElementById("main-container");
 const body = document.querySelector("body");
-const project = document.getElementById("project");
+const canvas = document.getElementById("canvas");
 
-export { sideBar, mainContainer, body, project };
+export { sideBar, mainContainer, body, canvas };

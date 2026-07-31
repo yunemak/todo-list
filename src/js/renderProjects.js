@@ -22,7 +22,7 @@ function createProjectElement(project) {
 	div.classList.add("project");
 	div.textContent = project.name;
 	div.addEventListener("click", () => {
-		renderTasks(project.taskList);
+		renderTasks(project);
 	});
 	return div;
 }
