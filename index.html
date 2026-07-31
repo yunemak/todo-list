@@ -1,82 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Todo List</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playpen+Sans:wght@100..800&family=Pliant:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script defer src="main.js"></script></head>
-<body>
-	<div class="main-container">
-		<div class="sidebar">
-			<button id="close-sidebar-btn"><img src="c511d2cf7f41e8c107ba.png" width="40px" height="40px"></button>
-			<h1>Workspaces</h1>
-			<div class="workspaces">
-
-
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo List</title>
+	<script defer src="main.js"></script></head>
+	<body>
+		<div id="main-container">
+			<nav id="menu">
+				<h1>Todo</h1>
+				<button type="button" id="add-project-button" class="button">
+					Add Project
+				</button>
+				<button type="button" id="add-task-button" class="button">
+					Add Task
+				</button>
+			</nav>
+			<div id="side-bar">
+				<h1>Projects</h1>
 			</div>
-			<button id="add-workspace-btn">Add workspace</button>
+			<div id="canvas"></div>
 		</div>
-		<div class="canvas">
-			<div class="menu">
-				<button id="open-sidebar-btn"><img src="c511d2cf7f41e8c107ba.png" width="40px" height="40px"></button>
-				<button id="add-task-btn">Add Task</button>
-			</div>
-			<div class="selected-workspace">
-
-			</div>
-		</div>
-	</div>
-	<div class="manager" id="task-manager">
-		<h3>Task Manager</h3>
-		<button type="button" class="close-btn" id="close-task-manager-btn">X</button>
-		<form id="task-form">
-			<div class="entry">
-				<label for="title">Title:</label>
-				<input id="title" minlength="1" required>
-			</div>
-			<div class="entry">
-				<label for="description">Description:</label>
-				<textarea id="description"></textarea>
-			</div>
-			<div class="entry">
-				<label for="due-date">Due Date:</label>
-				<input id="due-date" type="date" required>
-			</div>
-			<div class="entry">
-				<label for="priority-options">Priority:</label>
-				<div class="priority-options">
-					<div>
-						<input id="low-priority" type="radio" name="priority-options" value="low" checked>
-						<label for="low-priority">low</label>
-					</div>
-					<div>
-						<input id="medium-priority" type="radio" name="priority-options" value="medium">
-						<label for="medium-priority">medium</label>
-					</div>
-					<div>
-						<input id="high-priority" type="radio" name="priority-options" value="high">
-						<label for="high-priority">high</label>
-					</div>
-				</div>
-			</div>
-			<button class="confirm-btn">Confirm</button>
-		</form>
-	</div>
-	<div class="manager" id="workspace-manager">
-		<div>
-			<h3>Workspace Manager</h3>
-			<button type="button" class="close-btn" id="close-workspace-manager-btn">X</button>
-		</div>
-		<form id="workspace-form">
-			<div class="entry">
-				<label for="workspace-name">Workspace Name:</label>
-				<input id="workspace-name" type="text" required minlength="1">
-			</div>
-			<button class="confirm-btn" id="confirm-workspace-btn">Confirm</button>
-		</form>
-	</div>
-</body>
+	</body>
 </html>
