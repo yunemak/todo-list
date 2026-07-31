@@ -1,5 +1,7 @@
 import { mainContainer, body } from "./global.js";
 import closeImage from "../assets/close.png";
+import { createProject } from "./projectUtils.js";
+import { renderProjects } from "./renderProjects.js";
 
 const addTaskButton = document.getElementById("add-task-button");
 const addProjectButton = document.getElementById("add-project-button");
@@ -55,6 +57,12 @@ function createConfirmProjectButton(projectManager) {
 	const confirmButton = document.createElement("button");
 	confirmButton.classList.add("confirm-button");
 	confirmButton.textContent = "Confirm";
+	confirmButton.addEventListener("click", () => {
+		const titleInput = document.getElementById("title-input");
+		createProject(titleInput.value);
+		renderProjects();
+		closeProjectManager(projectManager);
+	});
 	return confirmButton;
 }
 
@@ -89,8 +97,12 @@ function createCloseButton(projectManager) {
 
 	// Function
 	closeButton.addEventListener("click", () => {
-		projectManager.remove();
-		setBackgroundDisabled(false);
+		closeProjectManager(projectManager);
 	});
 	return closeButton;
+}
+
+function closeProjectManager(projectManager) {
+	projectManager.remove();
+	setBackgroundDisabled(false);
 }

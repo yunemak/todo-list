@@ -8,6 +8,7 @@ import { sideBar } from "./global.js";
 import { getProjects } from "./projectUtils.js";
 
 function renderProjects() {
+	sideBar.replaceChildren();
 	getProjects().forEach((project) => {
 		sideBar.appendChild(createProjectElement(project.name));
 	});
