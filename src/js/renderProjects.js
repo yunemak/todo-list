@@ -20,6 +20,10 @@ function createProjectElement(project) {
 	div.dataset.projectId = project.id;
 	div.classList.add("project");
 	div.textContent = project.name;
+	div.addEventListener("click", () => {
+		// Here renderTasks(project.taskList) later
+		console.log(`${project.name} project is rendered`);
+	});
 	return div;
 }
 
