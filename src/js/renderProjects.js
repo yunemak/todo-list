@@ -6,6 +6,7 @@
 
 import { sideBar } from "./global.js";
 import { getProjects } from "./projectUtils.js";
+import { renderTasks } from "./renderTasks.js";
 
 function renderProjects() {
 	sideBar.replaceChildren();
@@ -21,8 +22,7 @@ function createProjectElement(project) {
 	div.classList.add("project");
 	div.textContent = project.name;
 	div.addEventListener("click", () => {
-		// Here renderTasks(project.taskList) later
-		console.log(`${project.name} project is rendered`);
+		renderTasks(project.taskList);
 	});
 	return div;
 }
