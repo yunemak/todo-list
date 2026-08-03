@@ -8,6 +8,7 @@
 }
 
 .task-short {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -28,4 +29,9 @@
 
 .description {
 	display: none;
+}
+
+.delete-button {
+	position: absolute;
+	right: 10px;
 }
