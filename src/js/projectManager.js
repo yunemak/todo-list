@@ -31,7 +31,7 @@ function createFormElement(projectManager) {
 		const titleInput = document.getElementById("title-input");
 		createProject(titleInput.value);
 		renderProjects();
-		closeProjectManager(projectManager);
+		destroyProjectManager(projectManager);
 	});
 
 	return formElement;
@@ -91,15 +91,15 @@ function createCloseButton(projectManager) {
 	closeButtonImage.classList.add("icon");
 	closeButtonImage.src = closeImage;
 	closeButton.appendChild(closeButtonImage);
-
+	
 	// Function
 	closeButton.addEventListener("click", () => {
-		closeProjectManager(projectManager);
+		destroyProjectManager(projectManager);
 	});
 	return closeButton;
 }
 
-function closeProjectManager(projectManager) {
+function destroyProjectManager(projectManager) {
 	projectManager.remove();
 	setBackgroundDisabled(false);
 }
