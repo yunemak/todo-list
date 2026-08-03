@@ -22,6 +22,8 @@ function createTaskElement(task) {
 	taskShortElement.appendChild(createDueDateElement(task));
 
 	taskElement.appendChild(taskShortElement);
+
+	taskElement.appendChild(createDescriptionElement(task));
 	return taskElement;
 }
 
@@ -44,6 +46,13 @@ function createDueDateElement(task) {
 	dueDateElement.classList.add("due-date");
 	dueDateElement.textContent = "due Date";
 	return dueDateElement;
+}
+
+function createDescriptionElement(task) {
+	const descriptionElement = document.createElement("p");
+	descriptionElement.classList.add("description");
+	descriptionElement.textContent = task.description;
+	return descriptionElement;
 }
 
 export { renderTasks };
