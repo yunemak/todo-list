@@ -27,7 +27,11 @@ function createTaskElement(task) {
 
 	taskElement.addEventListener("click", () => {
 		const descriptionElement = document.querySelector(".description");
-		descriptionElement.style.display = "flex";
+		if (descriptionElement.style.display === "none") {
+			descriptionElement.style.display = "flex";
+		} else {
+			descriptionElement.style.display = "none";
+		}
 	});
 	return taskElement;
 }
