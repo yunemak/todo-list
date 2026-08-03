@@ -20,3 +20,8 @@
 .title {
 	color: var(--color-font);
 }
+
+.due-date {
+	border-left: 2px solid var(--color-font);
+	padding-left: 10px;
+}
