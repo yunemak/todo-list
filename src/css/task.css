@@ -25,3 +25,7 @@
 	border-left: 2px solid var(--color-font);
 	padding-left: 10px;
 }
+
+.description {
+	display: none;
+}

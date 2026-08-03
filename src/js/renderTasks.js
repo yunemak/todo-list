@@ -24,6 +24,11 @@ function createTaskElement(task) {
 	taskElement.appendChild(taskShortElement);
 
 	taskElement.appendChild(createDescriptionElement(task));
+
+	taskElement.addEventListener("click", () => {
+		const descriptionElement = document.querySelector(".description");
+		descriptionElement.style.display = "flex";
+	});
 	return taskElement;
 }
 
