@@ -19,6 +19,7 @@ function createTaskElement(task) {
 
 	taskShortElement.appendChild(createCheckBox(task));
 	taskShortElement.appendChild(createTitleElement(task));
+	taskShortElement.appendChild(createDueDateElement(task));
 
 	taskElement.appendChild(taskShortElement);
 	return taskElement;
@@ -36,6 +37,12 @@ function createTitleElement(task) {
 	titleElement.classList.add("title");
 	titleElement.textContent = task.title;
 	return titleElement;
+}
+
+function createDueDateElement(task) {
+	const dueDateElement = document.createElement("p");
+	dueDateElement.textContent = "due Date";
+	return dueDateElement;
 }
 
 export { renderTasks };
