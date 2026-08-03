@@ -26,16 +26,16 @@ function removeProject(project) {
 	console.log("project removed!");
 }
 
-function removeTask(project, id) {
-	for (let i of projects) {
-		if (i === project) {
-			for (let task of i.taskList) {
-				if (task.id === id) {
-					// should delete here
+function removeTask(projectId, taskId) {
+	for (let project of projects) {
+		if (project.id === projectId) {
+			for (let task of project.taskList) {
+				if (task.id === taskId) {
+					project.taskList.splice(project.taskList.indexOf(task), 1);
 				}
 			}
 		}
 	}
 }
 
-export { createProject, getProjects, addProject, removeProject };
+export { createProject, getProjects, addProject, removeProject, removeTask };

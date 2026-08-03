@@ -1,17 +1,17 @@
 import { canvas } from "./global.js";
-import { removeProject } from "./projectUtils.js";
+import { removeProject, removeTask } from "./projectUtils.js";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
 	const container = document.createElement("div");
 	project.taskList.forEach((task) => {
-		container.appendChild(createTaskElement(task));
+		container.appendChild(createTaskElement(task, project));
 	});
 
 	canvas.appendChild(container);
 }
 
-function createTaskElement(task) {
+function createTaskElement(task, project) {
 	const taskElement = document.createElement("div");
 	taskElement.classList.add("task");
 
@@ -21,7 +21,9 @@ function createTaskElement(task) {
 	taskShortElement.appendChild(createCheckBox(task));
 	taskShortElement.appendChild(createTitleElement(task));
 	taskShortElement.appendChild(createDueDateElement(task));
-	taskShortElement.appendChild(createDeleteElement(task, taskElement));
+	taskShortElement.appendChild(
+		createDeleteElement(task, taskElement, project),
+	);
 
 	taskElement.appendChild(taskShortElement);
 
@@ -67,12 +69,13 @@ function createDescriptionElement(task, taskElement) {
 	return descriptionElement;
 }
 
-function createDeleteElement(task, taskElement) {
+function createDeleteElement(task, taskElement, project) {
 	const deleteButton = document.createElement("button");
 	deleteButton.textContent = "delete";
 	deleteButton.classList.add("delete-button");
 	deleteButton.addEventListener("click", (e) => {
 		e.stopPropagation();
+		removeTask(project.id, task.id);
 		taskElement.remove(task.id);
 	});
 	return deleteButton;
