@@ -20,6 +20,7 @@ function createTaskElement(task) {
 	taskShortElement.appendChild(createCheckBox(task));
 	taskShortElement.appendChild(createTitleElement(task));
 	taskShortElement.appendChild(createDueDateElement(task));
+	taskShortElement.appendChild(createDeleteElement(taskElement));
 
 	taskElement.appendChild(taskShortElement);
 
@@ -65,6 +66,15 @@ function createDescriptionElement(task, taskElement) {
 	return descriptionElement;
 }
 
-function createDeleteElement() {}
+function createDeleteElement(taskElement) {
+	const deleteButton = document.createElement("button");
+	deleteButton.textContent = "delete";
+	deleteButton.classList.add("delete-button");
+	deleteButton.addEventListener("click", (e) => {
+		e.stopPropagation();
+		taskElement.remove();
+	});
+	return deleteButton;
+}
 
 export { renderTasks };
