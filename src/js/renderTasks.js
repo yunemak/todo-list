@@ -23,16 +23,8 @@ function createTaskElement(task) {
 
 	taskElement.appendChild(taskShortElement);
 
-	taskElement.appendChild(createDescriptionElement(task));
+	taskElement.appendChild(createDescriptionElement(task, taskElement));
 
-	taskElement.addEventListener("click", () => {
-		const descriptionElement = document.querySelector(".description");
-		if (descriptionElement.style.display === "none") {
-			descriptionElement.style.display = "flex";
-		} else {
-			descriptionElement.style.display = "none";
-		}
-	});
 	return taskElement;
 }
 
@@ -54,14 +46,25 @@ function createDueDateElement(task) {
 	const dueDateElement = document.createElement("p");
 	dueDateElement.classList.add("due-date");
 	dueDateElement.textContent = "due Date";
+
 	return dueDateElement;
 }
 
-function createDescriptionElement(task) {
+function createDescriptionElement(task, taskElement) {
 	const descriptionElement = document.createElement("p");
 	descriptionElement.classList.add("description");
 	descriptionElement.textContent = task.description;
+	taskElement.addEventListener("click", () => {
+		const descriptionElement = document.querySelector(".description");
+		if (descriptionElement.style.display === "none") {
+			descriptionElement.style.display = "flex";
+		} else {
+			descriptionElement.style.display = "none";
+		}
+	});
 	return descriptionElement;
 }
+
+function createDeleteElement() {}
 
 export { renderTasks };
