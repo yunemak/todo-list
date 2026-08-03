@@ -1,4 +1,5 @@
 import { canvas } from "./global.js";
+import { removeProject } from "./projectUtils.js";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
@@ -20,7 +21,7 @@ function createTaskElement(task) {
 	taskShortElement.appendChild(createCheckBox(task));
 	taskShortElement.appendChild(createTitleElement(task));
 	taskShortElement.appendChild(createDueDateElement(task));
-	taskShortElement.appendChild(createDeleteElement(taskElement));
+	taskShortElement.appendChild(createDeleteElement(task, taskElement));
 
 	taskElement.appendChild(taskShortElement);
 
@@ -66,13 +67,13 @@ function createDescriptionElement(task, taskElement) {
 	return descriptionElement;
 }
 
-function createDeleteElement(taskElement) {
+function createDeleteElement(task, taskElement) {
 	const deleteButton = document.createElement("button");
 	deleteButton.textContent = "delete";
 	deleteButton.classList.add("delete-button");
 	deleteButton.addEventListener("click", (e) => {
 		e.stopPropagation();
-		taskElement.remove();
+		taskElement.remove(task.id);
 	});
 	return deleteButton;
 }
