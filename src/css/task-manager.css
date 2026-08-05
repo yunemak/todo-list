@@ -10,3 +10,23 @@
 	/* Layout inside */
 	display: flex;
 }
+
+.title-container {
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
+.title-input {
+	padding: 5px;
+	border: 2px solid var(--color-font);
+}
+
+.title-input:user-invalid {
+	border: 2px solid red;
+}
+
+.title-input:user-valid {
+	border: 2px solid var(--color-confirm);
+}

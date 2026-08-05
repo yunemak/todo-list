@@ -28,6 +28,7 @@ function createTitleInput() {
 	const titleInput = document.createElement("input");
 	titleInput.classList.add("title-input");
 	titleContainer.appendChild(titleInput);
+	titleInput.setAttribute("required", "");
 
 	return titleContainer;
 }
