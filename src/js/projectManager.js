@@ -1,7 +1,7 @@
 import { mainContainer, body, addProjectButton } from "./global.js";
 import { createProject } from "./projectUtils.js";
 import { renderProjects } from "./renderProjects.js";
-import { createCloseButton, setBackgroundDisabled } from "./managerCommon.js";
+import { createCloseButton, setBackgroundDisabled, createConfirmButton } from "./managerCommon.js";
 
 addProjectButton.addEventListener("click", () => {
 	setBackgroundDisabled(true);
@@ -21,7 +21,7 @@ function createProjectManager() {
 function createFormElement(projectManager) {
 	const formElement = document.createElement("form");
 	formElement.appendChild(createNameInput());
-	formElement.appendChild(createConfirmProjectButton(projectManager));
+	formElement.appendChild(createConfirmButton(projectManager));
 
 	formElement.addEventListener("submit", (e) => {
 		e.preventDefault();
@@ -53,12 +53,7 @@ function createNameInput() {
 	return inputContainer;
 }
 
-function createConfirmProjectButton(projectManager) {
-	const confirmButton = document.createElement("button");
-	confirmButton.classList.add("confirm-button");
-	confirmButton.textContent = "Confirm";
-	return confirmButton;
-}
+
 
 function destroyProjectManager(projectManager) {
 	projectManager.remove();

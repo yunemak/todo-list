@@ -10,10 +10,14 @@ function createTaskManager() {
 	taskManager.classList.add("task-manager");
 	body.appendChild(taskManager);
 
-	taskManager.appendChild(createTitleInput());
-	taskManager.appendChild(createCloseButton(taskManager));
+	createFormElement(taskManager);
 
 	return taskManager;
+}
+
+function createFormElement(taskManager) {
+	taskManager.appendChild(createCloseButton(taskManager));
+	taskManager.appendChild(createTitleInput());
 }
 
 function createTitleInput() {

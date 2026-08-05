@@ -1,9 +1,5 @@
 import closeImage from "../assets/close.png";
-import {
-	addTaskButton,
-	addProjectButton,
-	mainContainer,
-} from "./global.js";
+import { addTaskButton, addProjectButton, mainContainer } from "./global.js";
 
 function createCloseButton(manager) {
 	const closeButton = document.createElement("button");
@@ -19,6 +15,13 @@ function createCloseButton(manager) {
 		setBackgroundDisabled(false);
 	});
 	return closeButton;
+}
+
+function createConfirmButton(projectManager) {
+	const confirmButton = document.createElement("button");
+	confirmButton.classList.add("confirm-button");
+	confirmButton.textContent = "Confirm";
+	return confirmButton;
 }
 
 function setBackgroundDisabled(isDisabled) {
@@ -42,4 +45,4 @@ function updateButtonState(button, isDisabled) {
 	}
 }
 
-export { createCloseButton, setBackgroundDisabled };
+export { createCloseButton, setBackgroundDisabled, createConfirmButton };
