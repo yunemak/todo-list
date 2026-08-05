@@ -1,6 +1,5 @@
-import { mainContainer, body } from "./global.js";
-
-const addTaskButton = document.getElementById("add-task-button");
+import { mainContainer, body, addTaskButton } from "./global.js";
+import { createCloseButton, setBackgroundDisabled } from "./managerCommon.js";
 
 addTaskButton.addEventListener("click", () => {
 	const taskManager = createTaskManager();
@@ -12,6 +11,7 @@ function createTaskManager() {
 	body.appendChild(taskManager);
 
 	taskManager.appendChild(createTitleInput());
+	taskManager.appendChild(createCloseButton(taskManager));
 
 	return taskManager;
 }
@@ -31,21 +31,6 @@ function createTitleInput() {
 	titleInput.setAttribute("required", "");
 
 	return titleContainer;
-}
-
-function createCloseButton(projectManager) {
-	const closeButton = document.createElement("button");
-	closeButton.classList.add("close-button");
-	const closeButtonImage = document.createElement("img");
-	closeButtonImage.classList.add("icon");
-	closeButtonImage.src = closeImage;
-	closeButton.appendChild(closeButtonImage);
-
-	// Function
-	closeButton.addEventListener("click", () => {
-		destroyTaskManager(projectManager);
-	});
-	return closeButton;
 }
 
 function destroyTaskManager(taskManager) {
