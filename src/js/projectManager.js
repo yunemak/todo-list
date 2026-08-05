@@ -23,13 +23,13 @@ function createProjectManager() {
 
 function createFormElement(projectManager) {
 	const formElement = document.createElement("form");
-	formElement.appendChild(createTitleInput());
+	formElement.appendChild(createNameInput());
 	formElement.appendChild(createConfirmProjectButton(projectManager));
 
 	formElement.addEventListener("submit", (e) => {
 		e.preventDefault();
-		const titleInput = document.getElementById("title-input");
-		createProject(titleInput.value);
+		const nameInput = document.getElementById("name-input");
+		createProject(nameInput.value);
 		renderProjects();
 		destroyProjectManager(projectManager);
 	});
@@ -37,21 +37,21 @@ function createFormElement(projectManager) {
 	return formElement;
 }
 
-function createTitleInput() {
+function createNameInput() {
 	const inputContainer = document.createElement("div");
 	inputContainer.classList.add("input-container");
 
-	const titleLabel = document.createElement("label");
-	inputContainer.appendChild(titleLabel);
-	titleLabel.textContent = "Title:";
-	titleLabel.setAttribute("for", "title-input");
+	const nameLabel = document.createElement("label");
+	inputContainer.appendChild(nameLabel);
+	nameLabel.textContent = "Name:";
+	nameLabel.setAttribute("for", "name-input");
 
-	const titleInput = document.createElement("input");
-	inputContainer.appendChild(titleInput);
-	titleInput.classList.add("title-input");
-	titleInput.setAttribute("id", "title-input");
-	titleInput.setAttribute("minlength", "1");
-	titleInput.setAttribute("required", "");
+	const nameInput = document.createElement("input");
+	inputContainer.appendChild(nameInput);
+	nameInput.classList.add("name-input");
+	nameInput.setAttribute("id", "name-input");
+	nameInput.setAttribute("minlength", "1");
+	nameInput.setAttribute("required", "");
 
 	return inputContainer;
 }
@@ -91,7 +91,7 @@ function createCloseButton(projectManager) {
 	closeButtonImage.classList.add("icon");
 	closeButtonImage.src = closeImage;
 	closeButton.appendChild(closeButtonImage);
-	
+
 	// Function
 	closeButton.addEventListener("click", () => {
 		destroyProjectManager(projectManager);
