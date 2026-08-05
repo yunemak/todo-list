@@ -1,5 +1,9 @@
 import { mainContainer, body, addTaskButton } from "./global.js";
-import { createCloseButton, setBackgroundDisabled } from "./managerCommon.js";
+import {
+	createCloseButton,
+	createConfirmButton,
+	setBackgroundDisabled,
+} from "./managerCommon.js";
 
 addTaskButton.addEventListener("click", () => {
 	const taskManager = createTaskManager();
@@ -10,14 +14,23 @@ function createTaskManager() {
 	taskManager.classList.add("task-manager");
 	body.appendChild(taskManager);
 
-	createFormElement(taskManager);
+	taskManager.appendChild(createCloseButton(taskManager));
+
+	taskManager.appendChild(createFormElement(taskManager));
 
 	return taskManager;
 }
 
 function createFormElement(taskManager) {
-	taskManager.appendChild(createCloseButton(taskManager));
-	taskManager.appendChild(createTitleInput());
+	const formElement = document.createElement("form");
+	formElement.appendChild(createTitleInput());
+	formElement.appendChild(createConfirmButton(taskManager));
+
+	formElement.addEventListener("submit", () => {
+		console.log("deneme");
+	});
+
+	return formElement;
 }
 
 function createTitleInput() {
