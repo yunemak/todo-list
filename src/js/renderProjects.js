@@ -22,6 +22,7 @@ function createProjectElement(project) {
 	div.classList.add("project");
 	div.textContent = project.name;
 	div.addEventListener("click", () => {
+		project.isSelected = true;
 		renderTasks(project);
 	});
 	return div;

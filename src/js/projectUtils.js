@@ -5,6 +5,7 @@ function createProject(name) {
 		name,
 		taskList: [],
 		id: crypto.randomUUID(),
+		isSelected: false,
 	};
 	addProject(project);
 	return project;
@@ -38,4 +39,18 @@ function removeTask(projectId, taskId) {
 	}
 }
 
-export { createProject, getProjects, addProject, removeProject, removeTask };
+function selectProject(project) {
+	projects.forEach((project) => {
+		project.isSelected = false;
+	});
+	project.isSelected = true;
+}
+
+export {
+	createProject,
+	getProjects,
+	addProject,
+	removeProject,
+	removeTask,
+	selectProject,
+};

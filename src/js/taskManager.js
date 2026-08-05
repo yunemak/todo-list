@@ -4,6 +4,9 @@ import {
 	createConfirmButton,
 	setBackgroundDisabled,
 } from "./managerCommon.js";
+import { getProjects } from "./projectUtils.js";
+import { createTask } from "./createTask.js";
+import { renderTasks } from "./renderTasks.js";
 
 addTaskButton.addEventListener("click", () => {
 	const taskManager = createTaskManager();
@@ -27,7 +30,12 @@ function createFormElement(taskManager) {
 	formElement.appendChild(createConfirmButton(taskManager));
 
 	formElement.addEventListener("submit", () => {
-		console.log("deneme");
+		getProjects().forEach((project) => {
+			if (project.isSelected) {
+				project.taskList.push(createTask("task"));
+				renderTasks(project);
+			}
+		});
 	});
 
 	return formElement;
