@@ -9,6 +9,7 @@
 	left: 50%;
 	/* Layout inside */
 	display: flex;
+	justify-content: center;
 }
 
 .title-container {

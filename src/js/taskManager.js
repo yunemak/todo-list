@@ -18,7 +18,7 @@ function createTaskManager() {
 
 function createTitleInput() {
 	const titleContainer = document.createElement("div");
-	titleContainer.classList.add("title-container");
+	titleContainer.classList.add("input-container");
 
 	const titleLabel = document.createElement("label");
 	titleLabel.classList.add("title-label");
