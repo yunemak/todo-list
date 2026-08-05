@@ -33,6 +33,21 @@ function createTitleInput() {
 	return titleContainer;
 }
 
+function createCloseButton(projectManager) {
+	const closeButton = document.createElement("button");
+	closeButton.classList.add("close-button");
+	const closeButtonImage = document.createElement("img");
+	closeButtonImage.classList.add("icon");
+	closeButtonImage.src = closeImage;
+	closeButton.appendChild(closeButtonImage);
+
+	// Function
+	closeButton.addEventListener("click", () => {
+		destroyTaskManager(projectManager);
+	});
+	return closeButton;
+}
+
 function destroyTaskManager(taskManager) {
 	taskManager.remove();
 }
