@@ -5,7 +5,7 @@
 */
 
 import { sideBar } from "./global.js";
-import { getProjects } from "./projectUtils.js";
+import { getProjects, selectProject } from "./projectUtils.js";
 import { renderTasks } from "./renderTasks.js";
 
 function renderProjects() {
@@ -22,7 +22,7 @@ function createProjectElement(project) {
 	div.classList.add("project");
 	div.textContent = project.name;
 	div.addEventListener("click", () => {
-		project.isSelected = true;
+		selectProject(project);
 		renderTasks(project);
 	});
 	return div;

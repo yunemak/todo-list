@@ -33,7 +33,7 @@ function createFormElement(taskManager) {
 		e.preventDefault();
 		getProjects().forEach((project) => {
 			if (project.isSelected) {
-				console.log("the task is pushed to project");
+				console.log(`the task is pushed to project ${project.name}`);
 				project.taskList.push(createTask("aaasssddd"));
 				renderTasks(project);
 			}
