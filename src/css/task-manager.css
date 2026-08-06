@@ -13,12 +13,21 @@
 	align-items: center;
 }
 
-.title-container {
+.task-manager > form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.input-container {
 	display: grid;
-	grid-template-columns: 50px 1fr;
+	grid-template-columns: 90px 1fr;
 	justify-content: center;
 	align-items: center;
 }
+
+/* .input-label {
+} */
 
 .title-input {
 	padding: 5px;
@@ -31,4 +40,10 @@
 
 .title-input:user-valid {
 	border: 2px solid var(--color-confirm);
+}
+
+.description-input {
+	resize: vertical;
+	max-height: 100px;
+	min-height: 30px;
 }

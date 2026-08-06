@@ -27,14 +27,15 @@ function createTaskManager() {
 function createFormElement(taskManager) {
 	const formElement = document.createElement("form");
 	formElement.appendChild(createTitleInput());
+	formElement.appendChild(createDescriptionInput());
 	formElement.appendChild(createConfirmButton(taskManager));
 
 	formElement.addEventListener("submit", (e) => {
 		e.preventDefault();
 		getProjects().forEach((project) => {
 			if (project.isSelected) {
-				console.log(`the task is pushed to project ${project.name}`);
-				project.taskList.push(createTask("aaasssddd"));
+				const titleInput = document.querySelector(".title-input");
+				project.taskList.push(createTask(titleInput.value));
 				renderTasks(project);
 			}
 		});
@@ -49,16 +50,34 @@ function createTitleInput() {
 	titleContainer.classList.add("input-container");
 
 	const titleLabel = document.createElement("label");
-	titleLabel.classList.add("title-label");
-	titleContainer.appendChild(titleLabel);
+	titleLabel.classList.add("input-label");
 	titleLabel.textContent = "Title:";
 
 	const titleInput = document.createElement("input");
 	titleInput.classList.add("title-input");
-	titleContainer.appendChild(titleInput);
 	titleInput.setAttribute("required", "");
 
+	titleContainer.appendChild(titleLabel);
+	titleContainer.appendChild(titleInput);
+
 	return titleContainer;
+}
+
+function createDescriptionInput() {
+	const descriptionContainer = document.createElement("div");
+	descriptionContainer.classList.add("input-container");
+
+	const descriptionLabel = document.createElement("label");
+	descriptionLabel.classList.add("input-label");
+	descriptionLabel.textContent = "Description:";
+
+	const descriptionInput = document.createElement("textarea");
+	descriptionInput.classList.add("description-input");
+
+	descriptionContainer.appendChild(descriptionLabel);
+	descriptionContainer.appendChild(descriptionInput);
+
+	return descriptionContainer;
 }
 
 function destroyTaskManager(taskManager) {
