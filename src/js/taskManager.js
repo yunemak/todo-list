@@ -9,6 +9,7 @@ import { createTask } from "./createTask.js";
 import { renderTasks } from "./renderTasks.js";
 
 addTaskButton.addEventListener("click", () => {
+	setBackgroundDisabled(true);
 	const taskManager = createTaskManager();
 });
 
@@ -81,5 +82,6 @@ function createDescriptionInput() {
 }
 
 function destroyTaskManager(taskManager) {
+	setBackgroundDisabled(false);
 	taskManager.remove();
 }
