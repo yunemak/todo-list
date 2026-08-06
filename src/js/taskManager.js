@@ -29,13 +29,16 @@ function createFormElement(taskManager) {
 	formElement.appendChild(createTitleInput());
 	formElement.appendChild(createConfirmButton(taskManager));
 
-	formElement.addEventListener("submit", () => {
+	formElement.addEventListener("submit", (e) => {
+		e.preventDefault();
 		getProjects().forEach((project) => {
 			if (project.isSelected) {
-				project.taskList.push(createTask("task"));
+				console.log("the task is pushed to project");
+				project.taskList.push(createTask("aaasssddd"));
 				renderTasks(project);
 			}
 		});
+		destroyTaskManager(taskManager);
 	});
 
 	return formElement;

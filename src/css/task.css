@@ -1,3 +1,9 @@
+.task-list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
 .task {
 	box-shadow: 5px 5px 20px var(--color-shadow);
 	background-color: var(--color-main);

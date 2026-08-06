@@ -4,6 +4,7 @@ import { removeProject, removeTask } from "./projectUtils.js";
 function renderTasks(project) {
 	canvas.replaceChildren();
 	const container = document.createElement("div");
+	container.classList.add("task-list");
 	project.taskList.forEach((task) => {
 		container.appendChild(createTaskElement(task, project));
 	});
