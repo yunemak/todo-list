@@ -47,7 +47,7 @@ function createTaskElement(task, project) {
 function createEditButton(task, project, taskElement) {
 	const editButton = document.createElement("button");
 	editButton.classList.add("edit-button");
-	editButton.textContent = "edit";
+	editButton.textContent = "Edit";
 
 	taskElement.addEventListener("click", (e) => {
 		e.stopPropagation();
