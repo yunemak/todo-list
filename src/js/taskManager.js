@@ -29,6 +29,7 @@ function createFormElement(taskManager) {
 	const formElement = document.createElement("form");
 	formElement.appendChild(createTitleInput());
 	formElement.appendChild(createDescriptionInput());
+	formElement.appendChild(createDueDateInput());
 	formElement.appendChild(createConfirmButton(taskManager));
 
 	formElement.addEventListener("submit", (e) => {
@@ -36,7 +37,14 @@ function createFormElement(taskManager) {
 		getProjects().forEach((project) => {
 			if (project.isSelected) {
 				const titleInput = document.querySelector(".title-input");
-				project.taskList.push(createTask(titleInput.value));
+				const dueDateInput = document.querySelector(".due-date-input");
+				project.taskList.push(
+					createTask(
+						titleInput.value,
+						"description",
+						dueDateInput.value,
+					),
+				);
 				renderTasks(project);
 			}
 		});
@@ -79,6 +87,25 @@ function createDescriptionInput() {
 	descriptionContainer.appendChild(descriptionInput);
 
 	return descriptionContainer;
+}
+
+function createDueDateInput() {
+	const dueDateContainer = document.createElement("div");
+	dueDateContainer.classList.add("input-container");
+
+	const dueDateLabel = document.createElement("label");
+	dueDateLabel.classList.add("input-label");
+	dueDateLabel.textContent = "Due Date";
+
+	const dueDateInput = document.createElement("input");
+	dueDateInput.classList.add("due-date-input");
+	dueDateInput.setAttribute("type", "date");
+	dueDateInput.setAttribute("required", "");
+
+	dueDateContainer.appendChild(dueDateLabel);
+	dueDateContainer.appendChild(dueDateInput);
+
+	return dueDateContainer;
 }
 
 function destroyTaskManager(taskManager) {

@@ -1,5 +1,6 @@
 import { canvas } from "./global.js";
 import { removeProject, removeTask } from "./projectUtils.js";
+import { parseISO, format } from "date-fns";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
@@ -50,7 +51,7 @@ function createTitleElement(task) {
 function createDueDateElement(task) {
 	const dueDateElement = document.createElement("p");
 	dueDateElement.classList.add("due-date");
-	dueDateElement.textContent = "due Date";
+	dueDateElement.textContent = task.dueDate;
 
 	return dueDateElement;
 }
