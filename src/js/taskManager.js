@@ -156,3 +156,5 @@ function destroyTaskManager(taskManager) {
 	setBackgroundDisabled(false);
 	taskManager.remove();
 }
+
+export { createTaskManager };

@@ -2,6 +2,7 @@ import { canvas } from "./global.js";
 import { removeProject, removeTask } from "./projectUtils.js";
 import { parseISO, format } from "date-fns";
 import trashBinImage from "../assets/trash-bin.png";
+import { createTaskManager } from "./taskManager.js";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
@@ -60,9 +61,22 @@ function createEditButton(task, project, taskElement) {
 
 	editButton.addEventListener("click", (e) => {
 		e.stopPropagation();
+		createTaskManager();
+		fillTaskManager(task);
 	});
 
 	return editButton;
+}
+
+function fillTaskManager(task) {
+	const titleInput = document.querySelector(".title-input");
+	titleInput.value = task.title;
+	const descriptionInput = document.querySelector(".description-input");
+	descriptionInput.value = task.description;
+	const dueDateInput = document.querySelector(".due-date-input");
+	dueDateInput.value = task.dueDate;
+	const priorityInput = document.querySelector(`#${task.priority}-priority`);
+	priorityInput.checked = true;
 }
 
 function createCheckBox(task) {

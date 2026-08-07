@@ -9,7 +9,7 @@ import "./js/taskManager.js";
 let myProject = createProject("My Project");
 // console.log(myProject);
 myProject.taskList.push(
-	createTask("task1", "description", "2026-08-02", "priority"),
+	createTask("task1", "description", "2026-08-02", "low"),
 );
 // console.log(myProject);
 createProject("asd");
