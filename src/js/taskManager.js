@@ -38,10 +38,12 @@ function createFormElement(taskManager) {
 			if (project.isSelected) {
 				const titleInput = document.querySelector(".title-input");
 				const dueDateInput = document.querySelector(".due-date-input");
+				const descriptionInput =
+					document.querySelector(".description-input");
 				project.taskList.push(
 					createTask(
 						titleInput.value,
-						"description",
+						descriptionInput.value,
 						dueDateInput.value,
 					),
 				);
