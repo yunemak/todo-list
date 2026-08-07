@@ -123,13 +123,23 @@ function createPriorityInput() {
 	priorityInputs.classList.add("priority-inputs");
 
 	for (let priority of ["low", "medium", "high"]) {
+		const radioContainer = document.createElement("div");
+		radioContainer.classList.add("radio-container");
 
-		
+		const priorityLabel = document.createElement("label");
+		priorityLabel.textContent = priority;
+		priorityLabel.setAttribute("for", `${priority}-priority`);
+
 		const priorityInput = document.createElement("input");
 		priorityInput.type = "radio";
 		priorityInput.setAttribute("name", "priority");
 		priorityInput.setAttribute("value", priority);
-		priorityInputs.appendChild(priorityInput);
+		priorityInput.setAttribute("id", `${priority}-priority`);
+
+		radioContainer.appendChild(priorityInput);
+		radioContainer.appendChild(priorityLabel);
+
+		priorityInputs.appendChild(radioContainer);
 	}
 
 	priorityContainer.appendChild(priorityLabel);

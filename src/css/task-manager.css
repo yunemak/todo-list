@@ -47,3 +47,8 @@
 	max-height: 100px;
 	min-height: 30px;
 }
+
+.radio-container {
+	display: flex;
+	gap: 10px;
+}
