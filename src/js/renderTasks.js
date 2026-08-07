@@ -30,6 +30,14 @@ function createTaskElement(task, project) {
 
 	taskElement.appendChild(taskShortElement);
 
+	if (task.priority === 1) {
+		taskElement.classList.add("low-priority");
+	} else if (task.priority === 2) {
+		taskElement.classList.add("medium-priority");
+	} else {
+		taskElement.classList.add("high-priority");
+	}
+
 	taskElement.appendChild(createDescriptionElement(task, taskElement));
 
 	return taskElement;

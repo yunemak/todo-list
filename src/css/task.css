@@ -58,3 +58,15 @@
 	width: 70%;
 	height: 70%;
 }
+
+.low-priority {
+	border-left: 10px solid blue;
+}
+
+.medium-priority {
+	border-left: 10px solid yellow;
+}
+
+.high-priority {
+	border-left: 10px solid red;
+}
