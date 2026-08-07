@@ -30,6 +30,7 @@ function createFormElement(taskManager) {
 	formElement.appendChild(createTitleInput());
 	formElement.appendChild(createDescriptionInput());
 	formElement.appendChild(createDueDateInput());
+	formElement.appendChild(createPriorityInput());
 	formElement.appendChild(createConfirmButton(taskManager));
 
 	formElement.addEventListener("submit", (e) => {
@@ -97,7 +98,7 @@ function createDueDateInput() {
 
 	const dueDateLabel = document.createElement("label");
 	dueDateLabel.classList.add("input-label");
-	dueDateLabel.textContent = "Due Date";
+	dueDateLabel.textContent = "Due Date:";
 
 	const dueDateInput = document.createElement("input");
 	dueDateInput.classList.add("due-date-input");
@@ -108,6 +109,33 @@ function createDueDateInput() {
 	dueDateContainer.appendChild(dueDateInput);
 
 	return dueDateContainer;
+}
+
+function createPriorityInput() {
+	const priorityContainer = document.createElement("div");
+	priorityContainer.classList.add("input-container");
+
+	const priorityLabel = document.createElement("label");
+	priorityLabel.classList.add("input-label");
+	priorityLabel.textContent = "Priority:";
+
+	const priorityInputs = document.createElement("div");
+	priorityInputs.classList.add("priority-inputs");
+
+	for (let priority of ["low", "medium", "high"]) {
+
+		
+		const priorityInput = document.createElement("input");
+		priorityInput.type = "radio";
+		priorityInput.setAttribute("name", "priority");
+		priorityInput.setAttribute("value", priority);
+		priorityInputs.appendChild(priorityInput);
+	}
+
+	priorityContainer.appendChild(priorityLabel);
+	priorityContainer.appendChild(priorityInputs);
+
+	return priorityContainer;
 }
 
 function destroyTaskManager(taskManager) {
