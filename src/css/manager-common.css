@@ -9,7 +9,7 @@
 
 .close-button {
 	/* Style */
-	background-color: rgb(255, 174, 174);
+	background-color: var(--color-light-red);
 	border: 1px solid var(--color-font);
 	border-radius: 50%;
 	width: 25px;

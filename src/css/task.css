@@ -38,6 +38,23 @@
 }
 
 .delete-button {
+	cursor: pointer;
+	border: 2px solid var(--color-font);
+	box-shadow: 5px 5px 15px var(--color-shadow);
+	border-radius: 50%;
+	background-color: var(--color-menu);
+	width: 40px;
+	height: 40px;
+	/* Position */
 	position: absolute;
 	right: 10px;
+	/* Layout inside */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.delete-button > img {
+	width: 70%;
+	height: 70%;
 }

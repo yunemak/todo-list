@@ -16,6 +16,7 @@
 	--color-menu: #00bfff; /* deep sky */
 	--color-shadow: rgb(206, 206, 206);
 	--color-confirm: #5bdd5b;
+	--color-light-red: rgb(255, 174, 174);
 	/* Integers */
 	--font-weight: 500;
 }

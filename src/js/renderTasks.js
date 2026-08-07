@@ -1,6 +1,7 @@
 import { canvas } from "./global.js";
 import { removeProject, removeTask } from "./projectUtils.js";
 import { parseISO, format } from "date-fns";
+import trashBinImage from "../assets/trash-bin.png";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
@@ -72,8 +73,13 @@ function createDescriptionElement(task, taskElement) {
 
 function createDeleteElement(task, taskElement, project) {
 	const deleteButton = document.createElement("button");
-	deleteButton.textContent = "delete";
 	deleteButton.classList.add("delete-button");
+
+	const deleteImage = document.createElement("img");
+	deleteImage.setAttribute("src", trashBinImage);
+
+	deleteButton.appendChild(deleteImage);
+
 	deleteButton.addEventListener("click", (e) => {
 		e.stopPropagation();
 		removeTask(project.id, task.id);
