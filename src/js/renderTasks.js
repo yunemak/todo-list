@@ -39,8 +39,30 @@ function createTaskElement(task, project) {
 	}
 
 	taskElement.appendChild(createDescriptionElement(task, taskElement));
+	taskElement.appendChild(createEditButton(task, project, taskElement));
 
 	return taskElement;
+}
+
+function createEditButton(task, project, taskElement) {
+	const editButton = document.createElement("button");
+	editButton.classList.add("edit-button");
+	editButton.textContent = "edit";
+
+	taskElement.addEventListener("click", (e) => {
+		e.stopPropagation();
+		if (editButton.style.display === "flex") {
+			editButton.style.display = "none";
+		} else {
+			editButton.style.display = "flex";
+		}
+	});
+
+	editButton.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+
+	return editButton;
 }
 
 function createCheckBox(task) {

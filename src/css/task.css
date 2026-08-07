@@ -70,3 +70,7 @@
 .high-priority {
 	border-left: 10px solid red;
 }
+
+.edit-button {
+	display: none;
+}
