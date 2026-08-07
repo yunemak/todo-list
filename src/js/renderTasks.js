@@ -51,7 +51,7 @@ function createTitleElement(task) {
 function createDueDateElement(task) {
 	const dueDateElement = document.createElement("p");
 	dueDateElement.classList.add("due-date");
-	dueDateElement.textContent = task.dueDate;
+	dueDateElement.textContent = format(parseISO(task.dueDate), "dd MMM yyyy");
 
 	return dueDateElement;
 }
