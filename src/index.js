@@ -16,4 +16,5 @@ createProject("asd");
 createProject("deneme");
 
 renderProjects();
+myProject.isSelected = true;
 renderTasks(myProject);
