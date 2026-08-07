@@ -61,7 +61,6 @@ function createDescriptionElement(task, taskElement) {
 	descriptionElement.classList.add("description");
 	descriptionElement.textContent = task.description;
 	taskElement.addEventListener("click", () => {
-		const descriptionElement = document.querySelector(".description");
 		if (descriptionElement.style.display === "none") {
 			descriptionElement.style.display = "flex";
 		} else {
