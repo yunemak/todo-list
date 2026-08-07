@@ -2,6 +2,7 @@ import "./style.css";
 import { createTask } from "./js/createTask.js";
 import { renderProjects } from "./js/renderProjects.js";
 import { createProject, addProject, removeProject } from "./js/projectUtils.js";
+import { renderTasks } from "./js/renderTasks.js";
 import "./js/projectManager.js";
 import "./js/taskManager.js";
 
@@ -15,3 +16,4 @@ createProject("asd");
 createProject("deneme");
 
 renderProjects();
+renderTasks(myProject);
