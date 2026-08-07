@@ -41,11 +41,15 @@ function createFormElement(taskManager) {
 				const dueDateInput = document.querySelector(".due-date-input");
 				const descriptionInput =
 					document.querySelector(".description-input");
+				const priorityOption = document.querySelector(
+					"input[name='priority']:checked",
+				);
 				project.taskList.push(
 					createTask(
 						titleInput.value,
 						descriptionInput.value,
 						dueDateInput.value,
+						priorityOption.value,
 					),
 				);
 				renderTasks(project);
