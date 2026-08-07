@@ -62,10 +62,10 @@ function createDescriptionElement(task, taskElement) {
 	descriptionElement.classList.add("description");
 	descriptionElement.textContent = task.description;
 	taskElement.addEventListener("click", () => {
-		if (descriptionElement.style.display === "none") {
-			descriptionElement.style.display = "flex";
-		} else {
+		if (descriptionElement.style.display === "flex") {
 			descriptionElement.style.display = "none";
+		} else {
+			descriptionElement.style.display = "flex";
 		}
 	});
 	return descriptionElement;
