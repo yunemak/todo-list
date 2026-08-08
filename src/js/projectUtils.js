@@ -53,4 +53,5 @@ export {
 	removeProject,
 	removeTask,
 	selectProject,
+	projects,
 };
