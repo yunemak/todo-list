@@ -3,6 +3,7 @@ import { removeProject, removeTask } from "./projectUtils.js";
 import { parseISO, format } from "date-fns";
 import trashBinImage from "../assets/trash-bin.png";
 import { createTaskManager, destroyTaskManager } from "./taskManager.js";
+import { setBackgroundDisabled } from "./managerCommon.js";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
@@ -61,11 +62,11 @@ function createEditButton(task, project, taskElement) {
 
 	editButton.addEventListener("click", (e) => {
 		e.stopPropagation();
-		createTaskManager();
+		const taskManager = createTaskManager();
 		fillTaskManager(task);
 		const formElement = document.querySelector("form");
 
-		formElement.onsubmit = (e) => {
+		formElement.addEventListener("submit", (e) => {
 			e.preventDefault();
 			const titleInput = formElement.querySelector(".title-input");
 			task.title = titleInput.value;
@@ -79,8 +80,8 @@ function createEditButton(task, project, taskElement) {
 			);
 			task.priority = priorityOption.value;
 			renderTasks(project);
-			// destroyTaskManager();
-		};
+			destroyTaskManager();
+		});
 	});
 
 	return editButton;
