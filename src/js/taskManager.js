@@ -20,7 +20,7 @@ function createTaskManager() {
 
 	taskManager.appendChild(createCloseButton(taskManager));
 
-	taskManager.appendChild(createFormElement(taskManager));
+	taskManager.appendChild(createFormElement(taskManager,));
 
 	return taskManager;
 }
@@ -32,7 +32,7 @@ function createFormElement(taskManager) {
 	formElement.appendChild(createDueDateInput());
 	formElement.appendChild(createPriorityInput());
 	formElement.appendChild(createConfirmButton(taskManager));
-
+	
 	formElement.addEventListener("submit", (e) => {
 		e.preventDefault();
 		getProjects().forEach((project) => {
@@ -55,7 +55,7 @@ function createFormElement(taskManager) {
 				renderTasks(project);
 			}
 		});
-		destroyTaskManager(taskManager);
+		destroyTaskManager();
 	});
 
 	return formElement;
@@ -152,9 +152,10 @@ function createPriorityInput() {
 	return priorityContainer;
 }
 
-function destroyTaskManager(taskManager) {
+function destroyTaskManager() {
 	setBackgroundDisabled(false);
+	const taskManager = document.querySelector(".task-manager");
 	taskManager.remove();
 }
 
-export { createTaskManager };
+export { createTaskManager, destroyTaskManager };
