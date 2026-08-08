@@ -11,6 +11,8 @@ import { renderTasks } from "./renderTasks.js";
 addTaskButton.addEventListener("click", () => {
 	setBackgroundDisabled(true);
 	const taskManager = createTaskManager();
+	const formElement = taskManager.querySelector("form");
+	formElement.addEventListener("submit", createNewTaskEvent);
 });
 
 function createTaskManager() {
@@ -20,9 +22,34 @@ function createTaskManager() {
 
 	taskManager.appendChild(createCloseButton(taskManager));
 
-	taskManager.appendChild(createFormElement(taskManager,));
+	taskManager.appendChild(createFormElement(taskManager));
 
 	return taskManager;
+}
+
+function createNewTaskEvent(e) {
+	e.preventDefault();
+	getProjects().forEach((project) => {
+		if (project.isSelected) {
+			const titleInput = document.querySelector(".title-input");
+			const dueDateInput = document.querySelector(".due-date-input");
+			const descriptionInput =
+				document.querySelector(".description-input");
+			const priorityOption = document.querySelector(
+				"input[name='priority']:checked",
+			);
+			project.taskList.push(
+				createTask(
+					titleInput.value,
+					descriptionInput.value,
+					dueDateInput.value,
+					priorityOption.value,
+				),
+			);
+			renderTasks(project);
+		}
+	});
+	destroyTaskManager();
 }
 
 function createFormElement(taskManager) {
@@ -32,31 +59,6 @@ function createFormElement(taskManager) {
 	formElement.appendChild(createDueDateInput());
 	formElement.appendChild(createPriorityInput());
 	formElement.appendChild(createConfirmButton(taskManager));
-	
-	formElement.addEventListener("submit", (e) => {
-		e.preventDefault();
-		getProjects().forEach((project) => {
-			if (project.isSelected) {
-				const titleInput = document.querySelector(".title-input");
-				const dueDateInput = document.querySelector(".due-date-input");
-				const descriptionInput =
-					document.querySelector(".description-input");
-				const priorityOption = document.querySelector(
-					"input[name='priority']:checked",
-				);
-				project.taskList.push(
-					createTask(
-						titleInput.value,
-						descriptionInput.value,
-						dueDateInput.value,
-						priorityOption.value,
-					),
-				);
-				renderTasks(project);
-			}
-		});
-		destroyTaskManager();
-	});
 
 	return formElement;
 }
