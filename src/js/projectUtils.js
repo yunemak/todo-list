@@ -1,4 +1,6 @@
-let projects = [];
+import { getLocalProjects } from "./localStorageUtils.js";
+
+let projects = getLocalProjects();
 
 function createProject(name) {
 	let project = {
