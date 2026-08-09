@@ -1,4 +1,4 @@
-import { getLocalProjects } from "./localStorageUtils.js";
+import { getLocalProjects, updateLocalStorage } from "./localStorageUtils.js";
 
 let projects = getLocalProjects();
 
@@ -43,10 +43,12 @@ function removeTask(projectId, taskId) {
 }
 
 function selectProject(project) {
+	let projects = getLocalProjects();
 	projects.forEach((project) => {
 		project.isSelected = false;
 	});
 	project.isSelected = true;
+	updateLocalStorage(projects);
 }
 
 export {
@@ -56,5 +58,4 @@ export {
 	removeProject,
 	removeTask,
 	selectProject,
-	projects,
 };

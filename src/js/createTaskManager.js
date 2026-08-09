@@ -4,17 +4,9 @@ import {
 	createConfirmButton,
 	setBackgroundDisabled,
 } from "./managerCommon.js";
-import { getProjects } from "./projectUtils.js";
-import { createTask } from "./createTask.js";
+import { createTask } from "./taskUtils.js";
 import { renderTasks } from "./renderTasks.js";
 import { getLocalProjects, updateLocalStorage } from "./localStorageUtils.js";
-
-addTaskButton.addEventListener("click", () => {
-	setBackgroundDisabled(true);
-	const taskManager = createTaskManager();
-	const formElement = taskManager.querySelector("form");
-	formElement.addEventListener("submit", createNewTaskEvent);
-});
 
 function createTaskManager() {
 	const taskManager = document.createElement("div");
@@ -26,37 +18,6 @@ function createTaskManager() {
 	taskManager.appendChild(createFormElement(taskManager));
 
 	return taskManager;
-}
-
-function createNewTaskEvent(e) {
-	e.preventDefault();
-	let projects = getLocalProjects();
-
-	console.log("deneme");
-	projects.forEach((project) => {
-		console.log(project);
-		if (project.isSelected) {
-			const titleInput = document.querySelector(".title-input");
-			const dueDateInput = document.querySelector(".due-date-input");
-			const descriptionInput =
-				document.querySelector(".description-input");
-			const priorityOption = document.querySelector(
-				"input[name='priority']:checked",
-			);
-			project.taskList.push(
-				createTask(
-					titleInput.value,
-					descriptionInput.value,
-					dueDateInput.value,
-					priorityOption.value,
-				),
-			);
-			console.log(project);
-			renderTasks(project);
-		}
-	});
-	updateLocalStorage(projects);
-	destroyTaskManager();
 }
 
 function createFormElement(taskManager) {

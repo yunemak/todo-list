@@ -2,7 +2,6 @@ import { canvas } from "./global.js";
 import { removeProject, removeTask } from "./projectUtils.js";
 import { parseISO, format } from "date-fns";
 import trashBinImage from "../assets/trash-bin.png";
-import { createTaskManager, destroyTaskManager } from "./taskManager.js";
 import { setBackgroundDisabled } from "./managerCommon.js";
 
 function renderTasks(project) {
