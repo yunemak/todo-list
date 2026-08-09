@@ -1,6 +1,6 @@
-import { projects, getProjects } from "./projectUtils.js";
+import { getProjects } from "./projectUtils.js";
 
-function updateLocalStorage() {
+function updateLocalStorage(projects) {
 	localStorage.setItem("projects", JSON.stringify(projects));
 }
 

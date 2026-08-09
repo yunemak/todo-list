@@ -10,6 +10,7 @@ function createProject(name) {
 		isSelected: false,
 	};
 	addProject(project);
+	selectProject(project);
 	return project;
 }
 

@@ -7,6 +7,7 @@ import {
 import { getProjects } from "./projectUtils.js";
 import { createTask } from "./createTask.js";
 import { renderTasks } from "./renderTasks.js";
+import { getLocalProjects, updateLocalStorage } from "./localStorageUtils.js";
 
 addTaskButton.addEventListener("click", () => {
 	setBackgroundDisabled(true);
@@ -29,7 +30,11 @@ function createTaskManager() {
 
 function createNewTaskEvent(e) {
 	e.preventDefault();
-	getProjects().forEach((project) => {
+	let projects = getLocalProjects();
+
+	console.log("deneme");
+	projects.forEach((project) => {
+		console.log(project);
 		if (project.isSelected) {
 			const titleInput = document.querySelector(".title-input");
 			const dueDateInput = document.querySelector(".due-date-input");
@@ -46,9 +51,11 @@ function createNewTaskEvent(e) {
 					priorityOption.value,
 				),
 			);
+			console.log(project);
 			renderTasks(project);
 		}
 	});
+	updateLocalStorage(projects);
 	destroyTaskManager();
 }
 
