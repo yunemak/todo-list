@@ -1,15 +1,7 @@
 import "./style.css";
-import { createTask } from "./js/createTask.js";
-import { renderProjects } from "./js/renderProjects.js";
-import { renderTasks } from "./js/renderTasks.js";
+import "./js/createTask.js";
+import "./js/renderProjects.js";
+import "./js/renderTasks.js";
 import "./js/projectManager.js";
 import "./js/taskManager.js";
-import { createProject } from "./js/projectUtils.js";
-
-localStorage.setItem(
-	"defaultProject",
-	JSON.stringify(createProject("Default")),
-);
-
-renderProjects();
-renderTasks(JSON.parse(localStorage.getItem("defaultProject")));
+import "./js/projectUtils.js";

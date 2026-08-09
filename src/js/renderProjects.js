@@ -5,6 +5,7 @@
 */
 
 import { sideBar } from "./global.js";
+import { updateLocalStorage } from "./localStorageUtils.js";
 import { getProjects, selectProject } from "./projectUtils.js";
 import { renderTasks } from "./renderTasks.js";
 
@@ -12,8 +13,11 @@ function renderProjects() {
 	sideBar.replaceChildren();
 	getProjects().forEach((project) => {
 		sideBar.appendChild(createProjectElement(project));
+		if (project.isSelected) {
+			renderTasks(project);
+		}
 	});
-	return 0;
+	updateLocalStorage();
 }
 
 function createProjectElement(project) {
