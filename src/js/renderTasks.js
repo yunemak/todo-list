@@ -3,13 +3,19 @@ import { removeProject, removeTask } from "./projectUtils.js";
 import { parseISO, format } from "date-fns";
 import trashBinImage from "../assets/trash-bin.png";
 import { setBackgroundDisabled } from "./managerCommon.js";
+import { getLocalProjects } from "./localStorageUtils.js";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
 	const container = document.createElement("div");
 	container.classList.add("task-list");
-	project.taskList.forEach((task) => {
-		container.appendChild(createTaskElement(task, project));
+	let projectSelected;
+	getLocalProjects().forEach((p) => {
+		if (p.id === project.id) {
+			p.taskList.forEach((task) => {
+				container.appendChild(createTaskElement(task, p));
+			});
+		}
 	});
 
 	canvas.appendChild(container);

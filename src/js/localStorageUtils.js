@@ -5,7 +5,11 @@ function updateLocalStorage(projects) {
 }
 
 function getLocalProjects() {
-	return JSON.parse(localStorage.getItem("projects"));
+	let projects = JSON.parse(localStorage.getItem("projects"));
+	if (!projects) {
+		return [];
+	}
+	return projects;
 }
 
 export { updateLocalStorage, getLocalProjects };

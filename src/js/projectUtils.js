@@ -23,7 +23,9 @@ function getProjects() {
 }
 
 function addProject(project) {
+	let projects = getLocalProjects();
 	projects.push(project);
+	updateLocalStorage(projects);
 }
 
 function removeProject(project) {
@@ -44,14 +46,15 @@ function removeTask(projectId, taskId) {
 
 function selectProject(project) {
 	let projects = getLocalProjects();
-	console.log(projects);
 	projects.forEach((p) => {
 		p.isSelected = false;
 		if (p.id === project.id) {
 			p.isSelected = true;
 		}
 	});
+	console.log(projects);
 	updateLocalStorage(projects);
+	console.log(getLocalProjects());
 }
 
 export {
