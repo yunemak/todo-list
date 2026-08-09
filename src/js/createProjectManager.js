@@ -1,4 +1,4 @@
-import { mainContainer, body, addProjectButton } from "./global.js";
+import { mainContainer, body } from "./global.js";
 import { createProject } from "./projectUtils.js";
 import { renderProjects } from "./renderProjects.js";
 import {
@@ -13,7 +13,6 @@ function createProjectManager() {
 	body.appendChild(projectManager);
 
 	projectManager.appendChild(createCloseButton(projectManager));
-
 	projectManager.appendChild(createFormElement(projectManager));
 }
 
@@ -21,15 +20,6 @@ function createFormElement(projectManager) {
 	const formElement = document.createElement("form");
 	formElement.appendChild(createNameInput());
 	formElement.appendChild(createConfirmButton(projectManager));
-
-	formElement.addEventListener("submit", (e) => {
-		e.preventDefault();
-		const nameInput = document.getElementById("name-input");
-		createProject(nameInput.value);
-		renderProjects();
-		destroyProjectManager(projectManager);
-	});
-
 	return formElement;
 }
 
@@ -50,11 +40,6 @@ function createNameInput() {
 	nameInput.setAttribute("required", "");
 
 	return inputContainer;
-}
-
-function destroyProjectManager(projectManager) {
-	projectManager.remove();
-	setBackgroundDisabled(false);
 }
 
 export { createProjectManager };
