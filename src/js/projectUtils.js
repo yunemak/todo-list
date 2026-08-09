@@ -44,10 +44,13 @@ function removeTask(projectId, taskId) {
 
 function selectProject(project) {
 	let projects = getLocalProjects();
-	projects.forEach((project) => {
-		project.isSelected = false;
+	console.log(projects);
+	projects.forEach((p) => {
+		p.isSelected = false;
+		if (p.id === project.id) {
+			p.isSelected = true;
+		}
 	});
-	project.isSelected = true;
 	updateLocalStorage(projects);
 }
 

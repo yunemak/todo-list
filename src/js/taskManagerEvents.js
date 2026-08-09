@@ -2,6 +2,8 @@ import { addTaskButton } from "./global.js";
 import { setBackgroundDisabled } from "./managerCommon.js";
 import { createTaskManager, destroyTaskManager } from "./createTaskManager.js";
 import { updateLocalStorage, getLocalProjects } from "./localStorageUtils.js";
+import { createTask } from "./taskUtils.js";
+import { renderTasks } from "./renderTasks.js";
 
 addTaskButton.addEventListener("click", () => {
 	setBackgroundDisabled(true);
@@ -15,7 +17,6 @@ function createNewTaskEvent(e) {
 	let projects = getLocalProjects();
 
 	projects.forEach((project) => {
-		console.log(project);
 		if (project.isSelected) {
 			const titleInput = document.querySelector(".title-input");
 			const dueDateInput = document.querySelector(".due-date-input");
