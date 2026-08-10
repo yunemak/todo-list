@@ -21,7 +21,7 @@ if (!localStorage.getItem("projects")) {
 
 	let defaultProject = createProject("Default");
 	defaultProject.taskList.push(
-		createTask("Your very first task", "description", "2026-08-08"),
+		createTask("Your very first task", "description", "2026-08-08", "low"),
 	);
 
 	projects.push(defaultProject);

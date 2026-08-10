@@ -4,6 +4,7 @@ import { parseISO, format } from "date-fns";
 import trashBinImage from "../assets/trash-bin.png";
 import { setBackgroundDisabled } from "./managerCommon.js";
 import { getLocalProjects } from "./localStorageUtils.js";
+import { createTaskManager, destroyTaskManager } from "./createTaskManager.js";
 
 function renderTasks(project) {
 	canvas.replaceChildren();
