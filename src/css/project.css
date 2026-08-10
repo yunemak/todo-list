@@ -3,6 +3,9 @@
 	width: 80%;
 	border: 2px solid var(--color-font);
 	border-radius: 5px;
+	/* Layout */
+	display: flex;
+	justify-content: space-between;
 }
 
 .project:hover {
@@ -15,4 +18,17 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+}
+
+.delete-project-button {
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--color-menu);
+	width: 30px;
+	height: 30px;
+	/* Layout inside */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

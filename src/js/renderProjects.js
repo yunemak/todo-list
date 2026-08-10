@@ -9,6 +9,7 @@ import { updateLocalStorage } from "./localStorageUtils.js";
 import { selectProject } from "./projectUtils.js";
 import { renderTasks } from "./renderTasks.js";
 import { getLocalProjects } from "./localStorageUtils.js";
+import trashBinImage from "../assets/trash-bin.png";
 
 function renderProjects() {
 	sideBar.replaceChildren();
@@ -29,6 +30,20 @@ function createProjectElement(project) {
 		selectProject(project);
 		renderTasks(project);
 	});
+	let deleteButton = document.createElement("button");
+	deleteButton.classList.add("delete-project-button");
+
+	let deleteIcon = document.createElement("img");
+	deleteIcon.classList.add("icon");
+	deleteIcon.src = trashBinImage;
+
+	deleteButton.appendChild(deleteIcon);
+
+	deleteButton.addEventListener("click", (e) => {
+		e.stopPropagation();
+		console.log("remove project");
+	});
+	div.appendChild(deleteButton);
 	return div;
 }
 
