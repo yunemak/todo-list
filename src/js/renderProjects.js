@@ -6,7 +6,7 @@
 
 import { sideBar } from "./global.js";
 import { updateLocalStorage } from "./localStorageUtils.js";
-import { selectProject } from "./projectUtils.js";
+import { removeProject, selectProject } from "./projectUtils.js";
 import { renderTasks } from "./renderTasks.js";
 import { getLocalProjects } from "./localStorageUtils.js";
 import trashBinImage from "../assets/trash-bin.png";
@@ -41,7 +41,7 @@ function createProjectElement(project) {
 
 	deleteButton.addEventListener("click", (e) => {
 		e.stopPropagation();
-		console.log("remove project");
+		removeProject(project);
 	});
 	div.appendChild(deleteButton);
 	return div;

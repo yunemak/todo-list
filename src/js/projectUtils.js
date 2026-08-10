@@ -1,4 +1,5 @@
 import { getLocalProjects, updateLocalStorage } from "./localStorageUtils.js";
+import { renderProjects } from "./renderProjects.js";
 
 let projects = getLocalProjects();
 
@@ -29,7 +30,14 @@ function addProject(project) {
 }
 
 function removeProject(project) {
-	console.log("project removed!");
+	let projects = getLocalProjects();
+	projects.forEach((p) => {
+		if (p.id === project.id) {
+			projects.splice(projects.indexOf(p), 1);
+		}
+	});
+	updateLocalStorage(projects);
+	renderProjects();
 }
 
 function removeTask(projectId, taskId) {
