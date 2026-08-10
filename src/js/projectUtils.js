@@ -33,6 +33,7 @@ function removeProject(project) {
 }
 
 function removeTask(projectId, taskId) {
+	let projects = getLocalProjects();
 	for (let project of projects) {
 		if (project.id === projectId) {
 			for (let task of project.taskList) {
@@ -42,6 +43,7 @@ function removeTask(projectId, taskId) {
 			}
 		}
 	}
+	updateLocalStorage(projects);
 }
 
 function selectProject(project) {
