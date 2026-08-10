@@ -9,7 +9,6 @@ function renderTasks(project) {
 	canvas.replaceChildren();
 	const container = document.createElement("div");
 	container.classList.add("task-list");
-	let projectSelected;
 	getLocalProjects().forEach((p) => {
 		if (p.id === project.id) {
 			p.taskList.forEach((task) => {

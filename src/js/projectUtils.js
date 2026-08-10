@@ -54,9 +54,7 @@ function selectProject(project) {
 			p.isSelected = true;
 		}
 	});
-	console.log(projects);
 	updateLocalStorage(projects);
-	console.log(getLocalProjects());
 }
 
 export {

@@ -33,9 +33,9 @@ function createNewTaskEvent(e) {
 					priorityOption.value,
 				),
 			);
+			updateLocalStorage(projects);
 			renderTasks(project);
 		}
 	});
-	updateLocalStorage(projects);
 	destroyTaskManager();
 }
