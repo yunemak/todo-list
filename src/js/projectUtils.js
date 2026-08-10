@@ -1,5 +1,6 @@
 import { getLocalProjects, updateLocalStorage } from "./localStorageUtils.js";
 import { renderProjects } from "./renderProjects.js";
+import { canvas } from "./global.js";
 
 let projects = getLocalProjects();
 
@@ -36,6 +37,12 @@ function removeProject(project) {
 			projects.splice(projects.indexOf(p), 1);
 		}
 	});
+	if (projects[0]) {
+		selectProject(projects[0]);
+		renderTasks(projects[0]);
+	} else {
+		canvas.replaceChildren();
+	}
 	updateLocalStorage(projects);
 	renderProjects();
 }
