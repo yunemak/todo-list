@@ -19,6 +19,12 @@ function renderProjects() {
 			renderTasks(project);
 		}
 	});
+	let projects = getLocalProjects();
+	for (let p of projects) {
+		if (p.isSelected) {
+			renderTasks(p);
+		}
+	}
 }
 
 function createProjectElement(project) {

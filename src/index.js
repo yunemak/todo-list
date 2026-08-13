@@ -24,6 +24,7 @@ if (!localStorage.getItem("projects")) {
 		createTask("Your very first task", "description", "2026-08-08", "low"),
 	);
 
+	defaultProject.isSelected = true;
 	projects.push(defaultProject);
 
 	updateLocalStorage(projects);
