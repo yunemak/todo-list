@@ -3,7 +3,7 @@ import { removeProject, removeTask } from "./projectUtils.js";
 import { parseISO, format } from "date-fns";
 import trashBinImage from "../assets/trash-bin.png";
 import { setBackgroundDisabled } from "./managerCommon.js";
-import { getLocalProjects } from "./localStorageUtils.js";
+import { getLocalProjects, updateLocalStorage } from "./localStorageUtils.js";
 import { createTaskManager, destroyTaskManager } from "./createTaskManager.js";
 
 function renderTasks(project) {
@@ -73,18 +73,32 @@ function createEditButton(task, project, taskElement) {
 
 		formElement.addEventListener("submit", (e) => {
 			e.preventDefault();
+			let projects = getLocalProjects();
+			let p;
+			for (p of projects) {
+				if (p.id === project.id) {
+					break;
+				}
+			}
+			let t;
+			for (t of p.taskList) {
+				if (t.id === task.id) {
+					break;
+				}
+			}
 			const titleInput = formElement.querySelector(".title-input");
-			task.title = titleInput.value;
+			t.title = titleInput.value;
 			const descriptionInput =
 				formElement.querySelector(".description-input");
-			task.description = descriptionInput.value;
+			t.description = descriptionInput.value;
 			const dueDateInput = formElement.querySelector(".due-date-input");
-			task.dueDate = dueDateInput.value;
+			t.dueDate = dueDateInput.value;
 			const priorityOption = formElement.querySelector(
 				"input[name='priority']:checked",
 			);
-			task.priority = priorityOption.value;
-			renderTasks(project);
+			t.priority = priorityOption.value;
+			updateLocalStorage(projects);
+			renderTasks(p);
 			destroyTaskManager();
 		});
 	});
